@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Gulfs Display';
+    src: local('Gulfs Display Normal Italic'), local('Gulfs-Display-Normal-Italic'),
+        url('GulfsDisplay-NormalItalic.woff2') format('woff2'),
+        url('GulfsDisplay-NormalItalic.woff') format('woff'),
+        url('GulfsDisplay-NormalItalic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+  }
