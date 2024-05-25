@@ -1,0 +1,104 @@
+@import "../_theme.scss";
+
+$pixel: 1px;
+
+
+.pixel-button {
+  outline: none;
+  cursor: pointer;
+  width: 3rem;
+  font-family: $pixel-font-2;
+  font-size: 0.25rem;
+  padding: 5px 6px 5px 6px;
+  transform: scale(4);
+  transform-origin: 0 0;
+  border: 0;
+  background: #dddddd;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  z-index: 10;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    .light {
+      background: #afafaf;
+    }
+    .shadow, &:after {
+      background: #e1e1e1;
+    }
+  }
+
+  div {
+    background: #ffffff;
+    position: absolute;
+  }
+
+  .left, .right {
+    top: 0;
+    width: $pixel;
+    height: 100%;
+  }
+
+  .left {
+    left: -$pixel;
+  }
+
+  .right {
+    right: -$pixel;
+  }
+
+  .top, .bottom {
+    left: 0;
+    width: 100%;
+    height: $pixel;
+  }
+
+  .top {
+    top: -$pixel;
+  }
+
+  .bottom {
+    bottom: -$pixel;
+  }
+
+  .light {
+    background: #e1e1e1;
+    top: 0;
+    left: 0;
+  }
+
+  .light.top, .shadow.bottom {
+    height: $pixel;
+    width: 100%;
+  }
+
+  .light.left, .shadow.right {
+    height: 100%;
+    width: $pixel;
+  }
+
+  .shadow, &:after {
+    background: #afafaf;
+  }
+
+  .shadow.right {
+    right: 0;
+  }
+
+  .shadow.bottom {
+    bottom: 0;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: $pixel;
+    height: $pixel;
+    bottom: $pixel;
+    right: $pixel;
+  }
+}

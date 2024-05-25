@@ -2,12 +2,12 @@
 
 .typewriter-container {
   width: 100%;
-  height: 100px;
+  height: 10vh;
   overflow: hidden;
   position: relative;
   background-color: #00000000;
   color: #000;
-  font-family: 'Oswald', sans-serif;
+  font-family: $pixel-font-2;
   padding: 10px;
   box-sizing: border-box;
   display: flex;
@@ -16,7 +16,8 @@
 }
 
 .typewriter-message {
-  font-size: 3rem;
+  font-size: 1.25rem;
+  font-weight: 900;
   white-space: nowrap;
   overflow: hidden;
   border-right: 0.15em solid #0000;

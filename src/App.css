@@ -23,6 +23,7 @@
 
 .titel-page-main {
     z-index: 10;
+    pointer-events: none;
 }
 
 .gif {
@@ -34,16 +35,18 @@
     position: absolute;
     z-index: 5;
     transition: opacity 0.5s ease-in-out;
+    pointer-events: none;
 }
 .bunny {
     width: 65vw;
     height: 65vh;
-    margin-left: 36.74vw;
-    margin-top: 12.3vh;
+    margin-left: 36.84vw;
+    margin-top: 11.5vh;
     object-fit: cover;
     position: absolute;
     z-index: 5;
     transition: opacity 0.5s ease-in-out;
+    pointer-events: none;
 }
 
 .sitting-bunny {
@@ -55,11 +58,38 @@
     position: absolute;
     z-index: 5;
     transition: opacity 0.5s ease-in-out;
+    pointer-events: none;
+}
+
+.skiped-bunny {
+    width: 65vw;
+    height: 65vh;
+    margin-left: 38vw;
+    margin-top: 15vh;
+    object-fit: cover;
+    position: absolute;
+    z-index: 5;
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: none;
 }
 
 .text-container {
     position: absolute;
     top: 21%;
-    left: 76%;
+    left: 75%;
+    z-index: 15;
+}
+
+.skip-button {
+    position: absolute;
+    top: 85%;
+    left: 55%;
+    z-index: 15;
+}
+
+.shutup-button {
+    position: absolute;
+    top: 85%;
+    left: 35%;
     z-index: 15;
 }

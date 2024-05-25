@@ -1,16 +1,24 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import MainTitel from './components/MainTitel';
 import StarBackground from './components/StarBackground';
 import talkingGif from './assets/whykirbyy-talking-animation-bubble.gif';
 import bunny from './assets/whykirbyy-bunny.png';
 import sittingBunny from './assets/sitting.png';
+import skipedBunny from './assets/skip-bunny.png';
 import TextScroll from './components/TextScroll';
+import PixelButton from './components/PixelButton';
 import './App.css';
 
 function App() {
   const [showBunny, setShowBunny] = useState(true);
   const [showGif, setShowGif] = useState(false);
   const [showBunnySitting, setShowBunnySitting] = useState(false);
+  const [angryBunny, setAngryBunny] = useState(false);
+  const [skipBunny, setSkipBunny] = useState(false);
+  const [didIntro, setDidIntro] = useState(false);
+
+  const timers = useRef([]);
+
   const messages = [
     "Hi there!",
     "",
@@ -23,6 +31,48 @@ function App() {
     "Enjoy!"
   ];
 
+  const messagesAngry = [
+    "NO YOU SHUT UP!!",
+    "",
+    "I WELCOME YOU TO",
+    "THIS SITE",
+    "AND THIS IS HOW",
+    "YOU TREAT ME?",
+    "SHAME ON YOU!"
+  ];
+
+  const clearAllTimers = () => {
+    timers.current.forEach(timer => clearTimeout(timer));
+    timers.current = [];
+  };
+
+  const handleSkip = () => {
+    clearAllTimers();
+    setShowBunny(false);
+    setShowGif(false);
+    setShowBunnySitting(false);
+    setAngryBunny(false);
+    setSkipBunny(true);
+    setDidIntro(true);
+  };
+
+  const handleShutUp = () => {
+    clearAllTimers();
+    setShowBunny(false);
+    setShowGif(true);
+    setShowBunnySitting(false);
+    setAngryBunny(true);
+
+    const resetAngryBunnyTimer = setTimeout(() => {
+      setAngryBunny(false);
+      setShowGif(false);
+      setSkipBunny(true);
+      setDidIntro(true);
+    }, 7000);
+
+    timers.current.push(resetAngryBunnyTimer);
+  };
+
   useEffect(() => {
     const gifImage = new Image();
     gifImage.src = talkingGif;
@@ -30,22 +80,23 @@ function App() {
     const showGifTimer = setTimeout(() => {
       setShowGif(true);
       setShowBunny(false);
-    }, 2000);
+    }, 1000);
 
     const showGifBunnyTimer = setTimeout(() => {
       setShowGif(false);
       setShowBunny(true);
-    }, 10400);
+      setDidIntro(true);
+    }, 9500);
 
     const showSittingBunnyTimer = setTimeout(() => {
       setShowBunny(false);
       setShowBunnySitting(true);
-    }, 11500);
+    }, 10000);
+
+    timers.current.push(showGifTimer, showGifBunnyTimer, showSittingBunnyTimer);
 
     return () => {
-      clearTimeout(showGifTimer);
-      clearTimeout(showGifBunnyTimer);
-      clearTimeout(showSittingBunnyTimer);
+      clearAllTimers();
     };
   }, []);
 
@@ -56,12 +107,25 @@ function App() {
           <MainTitel text="whyKirbyy"/>
         </div>
       </div>
+      {!didIntro &&
+          <>
+              <div className="skip-button">
+                  <PixelButton label="skip" onClick={handleSkip}/>
+              </div>
+              <div className="shutup-button">
+                  <PixelButton label="Shut up!" onClick={handleShutUp}/>
+              </div>
+          </>
+      }
+
       <div className="text-container">
-        {showGif && <TextScroll messages={messages}/>}
+        {showGif && !angryBunny && <TextScroll messages={messages}/>}
+        {showGif && angryBunny && <TextScroll messages={messagesAngry}/>}
       </div>
       {showBunny && <img className="bunny" src={bunny} alt="whyKirbyy"/>}
       {showGif && <img className="gif" src={talkingGif} alt="whyKirbyy talking"/>}
       {showBunnySitting && <img className="sitting-bunny" src={sittingBunny} alt="whyKirbyy sitting"/>}
+      {skipBunny && <img className="skiped-bunny" src={skipedBunny} alt="whyKirbyy sitting angry"/>}
       <StarBackground/>
     </div>
   );
