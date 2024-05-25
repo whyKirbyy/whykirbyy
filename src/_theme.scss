@@ -1,19 +1,22 @@
-// colors:
-$pink: #ff4596;
+// _theme.scss
+@import url('https://fonts.googleapis.com/css2?family=Chicle&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jacquard+24&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+
+// Define font variables
+$title-font: 'Jacquard 24', system-ui;
+$compact-font-1: 'Oswald', sans-serif;
+$compact-font-2: 'Roboto Condensed', sans-serif;
+$compact-font-3: 'Fjalla One', sans-serif;
+
+// Define color variables
+$pink: #ff69b4;
 $rose: #E87889;
 $yellow: #F7E73D;
 $blue: #071A5E;
 $gray: #383347;
-
-// _theme.scss
-@import url('https://fonts.googleapis.com/css2?family=Chicle&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Jacquard+24&display=swap');
-
-$title-font: 'Jacquard 24', system-ui;
-$title-font-size: 20rem; // This is quite large, adjust as necessary
-
-// Other variables
-$pink: #ff69b4;
 
 // Media queries for responsiveness
 @mixin respond-to($media) {

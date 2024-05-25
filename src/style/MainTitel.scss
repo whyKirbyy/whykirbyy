@@ -7,15 +7,11 @@
 }
 
 .titel {
-  font-family: $title-font;
+  font-family: $compact-font-1;
   color: $rose;
-  font-weight: bold;
+  font-size: 15vw;
+  font-weight: 700;
   position: absolute;
+  -webkit-text-stroke: 0.5rem $yellow;
 }
 
-.titel2 {
-  font-family: $title-font;
-  color: white;
-  font-weight: bold;
-  position: absolute;
-}
