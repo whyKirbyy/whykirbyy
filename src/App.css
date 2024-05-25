@@ -33,15 +33,28 @@
     object-fit: cover;
     position: absolute;
     z-index: 5;
+    transition: opacity 0.5s ease-in-out;
 }
 .bunny {
     width: 65vw;
     height: 65vh;
-    margin-left: 36.75vw;
-    margin-top: 12.1vh;
+    margin-left: 36.74vw;
+    margin-top: 12.3vh;
     object-fit: cover;
     position: absolute;
-    z-index: 6;
+    z-index: 5;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.sitting-bunny {
+    width: 65vw;
+    height: 65vh;
+    margin-left: 36.74vw;
+    margin-top: 15vh;
+    object-fit: cover;
+    position: absolute;
+    z-index: 5;
+    transition: opacity 0.5s ease-in-out;
 }
 
 .text-container {
