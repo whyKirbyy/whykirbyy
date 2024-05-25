@@ -1,11 +1,27 @@
 // colors:
-$pink: #EEB5CE;
+$pink: #ff4596;
 $rose: #E87889;
 $yellow: #F7E73D;
 $blue: #071A5E;
 $gray: #383347;
 
-// fonts:
+// _theme.scss
 @import url('https://fonts.googleapis.com/css2?family=Chicle&display=swap');
-$title-font: 'Chicle';
-$title-font-size: 20rem;
+@import url('https://fonts.googleapis.com/css2?family=Jacquard+24&display=swap');
+
+$title-font: 'Jacquard 24', system-ui;
+$title-font-size: 20rem; // This is quite large, adjust as necessary
+
+// Other variables
+$pink: #ff69b4;
+
+// Media queries for responsiveness
+@mixin respond-to($media) {
+  @if $media == 'small' {
+    @media (max-width: 600px) { @content; }
+  } @else if $media == 'medium' {
+    @media (min-width: 601px) and (max-width: 1024px) { @content; }
+  } @else if $media == 'large' {
+    @media (min-width: 1025px) { @content; }
+  }
+}

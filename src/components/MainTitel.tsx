@@ -8,8 +8,13 @@ interface MainTitelProps {
 
 const MainTitel: React.FC<MainTitelProps> = ({ text, size }) => {
   return (
-    <div className={"titel"} style={{ fontSize: `${size}rem` }}>
-      {text}
+    <div className="container" style={{ fontSize: `${size}rem` }}>
+      <div className="titel2">
+        {text}
+      </div>
+      <div className="titel" style={{ fontSize: `${size}rem` }}>
+        {text}
+      </div>
     </div>
   );
 };

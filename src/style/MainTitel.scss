@@ -1,7 +1,21 @@
-.title {
-  background: transparent !important;
-  color: black;
-  font-size: 2rem;
+@import "../theme.scss";
+
+.container {
   position: relative;
-  z-index: 1;
+  margin-left: 5rem;
+  margin-top: 5rem;
+}
+
+.titel {
+  font-family: $title-font;
+  color: $rose;
+  font-weight: bold;
+  position: absolute;
+}
+
+.titel2 {
+  font-family: $title-font;
+  color: white;
+  font-weight: bold;
+  position: absolute;
 }
