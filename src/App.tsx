@@ -1,30 +1,56 @@
+import { useState, useEffect } from 'react';
 import MainTitel from './components/MainTitel';
 import StarBackground from './components/StarBackground';
 import talkingGif from './assets/whykirbyy-talking-animation-bubble.gif';
+import bunny from './assets/whykirbyy-bunny.png';
 import TextScroll from './components/TextScroll';
 import './App.css';
 
 function App() {
+  const [showBunny, setShowBunny] = useState(true);
   const messages = [
-    "Welcome the site of whyKirbyy!",
+    "Hi there!",
     "",
+    "Welcome the site of whyKirbyy!",
     "here you can find all the things",
-    "he worked and is working on",
+    "he worked on and is working on",
     "I hope you enjoy it!"
   ];
 
+  useEffect(() => {
+    const gifImage = new Image();
+    gifImage.src = talkingGif;
+
+    const showBunnyTimer = setTimeout(() => {
+      setShowBunny(false);
+    }, 2000);
+
+    const showTalkingBunnyTimer = setTimeout(() => {
+      setShowBunny(true);
+    }, 10800);
+
+    return () => {
+      clearTimeout(showBunnyTimer);
+      clearTimeout(showTalkingBunnyTimer);
+    };
+  }, []);
+
   return (
     <div className="page-main-container">
-      <div className={"titel-page-main-container"} >
+      <div className={"titel-page-main-container"}>
         <div className="titel-page-main">
-          <MainTitel text="whyKirbyy"  />
+          <MainTitel text="whyKirbyy"/>
         </div>
       </div>
       <div className={"text-container"}>
-        <TextScroll messages={messages} />
+        {!showBunny && <TextScroll messages={messages}/>}
       </div>
-      <img className="gif" src={talkingGif} alt="whyKirbyy talking" />
-      <StarBackground />
+      {showBunny ? (
+        <img className="bunny" src={bunny} alt="whyKirbyy"/>
+      ) : (
+        <img className="gif" src={talkingGif} alt="whyKirbyy talking"/>
+      )}
+      <StarBackground/>
     </div>
   );
 }

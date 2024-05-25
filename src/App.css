@@ -34,10 +34,19 @@
     position: absolute;
     z-index: 5;
 }
+.bunny {
+    width: 65vw;
+    height: 65vh;
+    margin-left: 36.75vw;
+    margin-top: 12.1vh;
+    object-fit: cover;
+    position: absolute;
+    z-index: 6;
+}
 
 .text-container {
     position: absolute;
     top: 21%;
-    left: 74.25%;
+    left: 76%;
     z-index: 15;
 }
