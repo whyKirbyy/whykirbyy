@@ -8,6 +8,7 @@ import sittingBunny from './assets/sitting.png';
 import skipedBunny from './assets/skip-bunny.png';
 import TextScroll from './components/TextScroll';
 import PixelButton from './components/PixelButton';
+import ArrowButton from './components/ArrowButton.tsx';
 import './App.css';
 
 function App() {
@@ -71,7 +72,7 @@ function App() {
       setShowRagingGif(false);
       setSkipBunny(true);
       setDidIntro(true);
-    }, 6700);
+    }, 4700);
 
     timers.current.push(resetAngryBunnyTimer);
   };
@@ -89,12 +90,12 @@ function App() {
       setShowGif(false);
       setShowBunny(true);
       setDidIntro(true);
-    }, 9500);
+    }, 8500);
 
     const showSittingBunnyTimer = setTimeout(() => {
       setShowBunny(false);
       setShowBunnySitting(true);
-    }, 10000);
+    }, 9000);
 
     timers.current.push(showGifTimer, showGifBunnyTimer, showSittingBunnyTimer);
 
@@ -110,6 +111,10 @@ function App() {
           <MainTitel text="whyKirbyy"/>
         </div>
       </div>
+      <div className={"button-arrow"}>
+        <ArrowButton direction="right" keyword="destination" />
+      </div>
+
       {!didIntro &&
           <>
               <div className="skip-button">
@@ -132,6 +137,9 @@ function App() {
             textSize="3.4rem"
           />}
       </div>
+      {showRagingGif &&
+        <div className={"temp-box"}></div>
+      }
       {showBunny && <img className="bunny" src={bunny} alt="whyKirbyy"/>}
       {showGif && <img className="gif" src={talkingGif} alt="whyKirbyy talking"/>}
       {showBunnySitting && <img className="sitting-bunny" src={sittingBunny} alt="whyKirbyy sitting"/>}

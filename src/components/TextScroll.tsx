@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import "../style/TextScroll.scss";
 
-const TextScroll = ({ messages, interval = 300, typingSpeed = 50, textColor = 'black', textSize = '1.25rem' }) => {
+const TextScroll = ({ messages, interval = 300, typingSpeed = 40, textColor = 'black', textSize = '1.25rem' }) => {
   const [currentMessage, setCurrentMessage] = useState('');
   const [messageIndex, setMessageIndex] = useState(0);
 
