@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import MainTitel from './components/MainTitel';
 import StarBackground from './components/StarBackground';
 import talkingGif from './assets/whykirbyy-talking-animation-bubble.gif';
+import ragingGif from './assets/bloody_horror.gif';
 import bunny from './assets/whykirbyy-bunny.png';
 import sittingBunny from './assets/sitting.png';
 import skipedBunny from './assets/skip-bunny.png';
@@ -16,6 +17,7 @@ function App() {
   const [angryBunny, setAngryBunny] = useState(false);
   const [skipBunny, setSkipBunny] = useState(false);
   const [didIntro, setDidIntro] = useState(false);
+  const [showRagingGif, setShowRagingGif] = useState(false);
 
   const timers = useRef([]);
 
@@ -59,16 +61,17 @@ function App() {
   const handleShutUp = () => {
     clearAllTimers();
     setShowBunny(false);
-    setShowGif(true);
+    setShowGif(false);
+    setShowRagingGif(true);
     setShowBunnySitting(false);
     setAngryBunny(true);
 
     const resetAngryBunnyTimer = setTimeout(() => {
       setAngryBunny(false);
-      setShowGif(false);
+      setShowRagingGif(false);
       setSkipBunny(true);
       setDidIntro(true);
-    }, 7000);
+    }, 6700);
 
     timers.current.push(resetAngryBunnyTimer);
   };
@@ -120,12 +123,20 @@ function App() {
 
       <div className="text-container">
         {showGif && !angryBunny && <TextScroll messages={messages}/>}
-        {showGif && angryBunny && <TextScroll messages={messagesAngry}/>}
+      </div>
+      <div className="text-container-rage">
+        {showRagingGif && angryBunny &&
+          <TextScroll
+            messages={messagesAngry}
+            textColor="red"
+            textSize="3.4rem"
+          />}
       </div>
       {showBunny && <img className="bunny" src={bunny} alt="whyKirbyy"/>}
       {showGif && <img className="gif" src={talkingGif} alt="whyKirbyy talking"/>}
       {showBunnySitting && <img className="sitting-bunny" src={sittingBunny} alt="whyKirbyy sitting"/>}
       {skipBunny && <img className="skiped-bunny" src={skipedBunny} alt="whyKirbyy sitting angry"/>}
+      {showRagingGif && <img className="raging-bunny" src={ragingGif} alt="whyKirbyy talking"/>}
       <StarBackground/>
     </div>
   );

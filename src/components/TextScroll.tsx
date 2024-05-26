@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import "../style/TextScroll.scss";
 
-const TextScroll = ({ messages, interval = 300, typingSpeed = 50 }) => {
+const TextScroll = ({ messages, interval = 300, typingSpeed = 50, textColor = 'black', textSize = '1.25rem' }) => {
   const [currentMessage, setCurrentMessage] = useState('');
   const [messageIndex, setMessageIndex] = useState(0);
 
@@ -23,10 +23,14 @@ const TextScroll = ({ messages, interval = 300, typingSpeed = 50 }) => {
 
   return (
     <div className="typewriter-container">
-      <div className="typewriter-message">{currentMessage}</div>
+      <div
+        className="typewriter-message"
+        style={{ color: textColor, fontSize: textSize }}
+      >
+        {currentMessage}
+      </div>
     </div>
   );
 };
 
 export default TextScroll;
-

@@ -49,6 +49,18 @@
     pointer-events: none;
 }
 
+.raging-bunny {
+    width: 120vw;
+    height: 120vh;
+    margin-left: 13vw;
+    margin-top: -4vh;
+    object-fit: cover;
+    position: absolute;
+    z-index: 50;
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: none;
+}
+
 .sitting-bunny {
     width: 65vw;
     height: 65vh;
@@ -78,6 +90,13 @@
     top: 21%;
     left: 75%;
     z-index: 15;
+}
+
+.text-container-rage {
+    position: absolute;
+    top: 18%;
+    left: 45%;
+    z-index: 65;
 }
 
 .skip-button {
