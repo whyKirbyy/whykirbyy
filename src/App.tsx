@@ -8,7 +8,7 @@ import sittingBunny from './assets/sitting.png';
 import skipedBunny from './assets/skip-bunny.png';
 import TextScroll from './components/TextScroll';
 import PixelButton from './components/PixelButton';
-import ArrowButton from './components/ArrowButton.tsx';
+//import ArrowButton from './components/ArrowButton.tsx';
 import './App.css';
 
 function App() {
@@ -112,7 +112,7 @@ function App() {
         </div>
       </div>
       <div className={"button-arrow"}>
-        <ArrowButton direction="right" keyword="destination" />
+        {/*<ArrowButton direction="right" keyword="destination" />*/}
       </div>
 
       {!didIntro &&
