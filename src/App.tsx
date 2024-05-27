@@ -73,7 +73,7 @@ function App() {
       setShowRagingGif(false);
       setSkipBunny(true);
       setDidIntro(true);
-    }, 4700);
+    }, 5500);
 
     timers.current.push(resetAngryBunnyTimer);
   };
@@ -145,7 +145,7 @@ function App() {
       {showGif && <img className="gif" src={talkingGif} alt="whyKirbyy talking"/>}
       {showBunnySitting && <img className="sitting-bunny" src={sittingBunny} alt="whyKirbyy sitting"/>}
       {skipBunny && <img className="skiped-bunny" src={skipedBunny} alt="whyKirbyy sitting angry"/>}
-      {showRagingGif && <img className="raging-bunny" src={ragingGif} alt="whyKirbyy talking"/>}
+      {showRagingGif && <div className={"raging-bunny-zoom"}><img className="raging-bunny" src={ragingGif} alt="whyKirbyy talking"/></div>}
       <StarBackground/>
     </div>
   );
