@@ -9,6 +9,7 @@ import skipedBunny from './assets/skip-bunny.png';
 import TextScroll from './components/TextScroll';
 import PixelButton from './components/PixelButton';
 //import ArrowButton from './components/ArrowButton.tsx';
+//import AppRouter from "./navigation/AppRouter.tsx"
 import './App.css';
 
 function App() {

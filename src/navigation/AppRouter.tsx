@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 /* Routes  */
 import App from "../App.tsx";
@@ -8,9 +8,11 @@ import App from "../App.tsx";
 
 const AppRouter: React.FC = () => {
   return (
-    <Router>
+    <BrowserRouter>
+      <Routes>
         <Route path="/" Component={App} />
-    </Router>
+      </Routes>
+    </BrowserRouter>
   );
 };
 
