@@ -125,6 +125,7 @@
     top: 18%;
     left: 40%;
     z-index: 1001;
+    animation:  shake 0.5s infinite;
 }
 
 .skip-button {
