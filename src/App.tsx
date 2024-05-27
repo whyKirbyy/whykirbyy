@@ -8,6 +8,7 @@ import sittingBunny from './assets/sitting.png';
 import skipedBunny from './assets/skip-bunny.png';
 import TextScroll from './components/TextScroll';
 import PixelButton from './components/PixelButton';
+import Window from './components/Window';
 //import ArrowButton from './components/ArrowButton.tsx';
 //import AppRouter from "./navigation/AppRouter.tsx"
 import './App.css';
@@ -107,6 +108,7 @@ function App() {
 
   return (
     <div className="page-main-container">
+      {/*<Window title="whyKirbyy" text="Test text 123" />*/}
       <div className="titel-page-main-container">
         <div className="titel-page-main">
           <MainTitel text="whyKirbyy"/>

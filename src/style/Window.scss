@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css?family=VT323&display=swap');
+
+$box-size: 500px;
+$border-color: #9f1bf5;
+$box-color: #fed5fb;
+$border-size: 2px;
+$background-color: #ffffff;
+$stripes: rgba(78, 132, 210, 0.3);
+
+.body {
+  background: $background-color;
+}
+
+.Frame {
+  transform: scale(0.8);
+  margin: 10vw auto;
+  text-align: center;
+  font-family: 'VT323', monospace;
+  display: flex;
+  width: $box-size;
+  border-top: $border-size solid white;
+  border-bottom: $border-size solid $border-color;
+  border-left: $border-size solid white;
+  border-right: $border-size solid $border-color;
+  background-color: #6effeb;
+  position: relative;
+  justify-content: center;
+  flex-direction: column;
+
+  .header {
+    display: flex;
+    margin: $border-size * 2;
+    margin-bottom: 0;
+    box-sizing: border-box;
+    width: calc(#{$box-size} - #{$border-size * 4});
+    height: 2em;
+    margin-top: $border-size * 2;
+    padding: $border-size * 2;
+    background: $box-color;
+    border: $border-size solid $border-color;
+
+    h1 {
+      margin-right: auto;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+
+    button {
+      font-family: 'Pixel-Art Regular';
+      align-self: flex-end;
+      flex: 0 1 auto;
+      margin: auto $border-size;
+      padding: 0 $border-size;
+      background: none;
+      border: $border-color $border-size solid;
+      width: 2em;
+      height: 2em;
+      color: $border-color;
+      font-weight: bold;
+      font-size: 0.7em;
+      line-height: 1em;
+      -webkit-text-stroke: $border-size - 1px;
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-left: white solid $border-size;
+        border-top: white solid $border-size;
+        top: -$border-size;
+        left: -$border-size;
+        z-index: 2;
+      }
+    }
+  }
+
+  .body {
+    box-sizing: border-box;
+    flex: 1;
+    width: calc(#{$box-size} - #{$border-size * 4});
+    margin: $border-size * 2;
+    background: $box-color;
+    border: $border-size solid $border-color;
+    padding: $border-size;
+  }
+}
