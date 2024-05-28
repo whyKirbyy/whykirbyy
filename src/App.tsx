@@ -20,7 +20,7 @@ function App() {
   const [skipBunny, setSkipBunny] = useState(false);
   const [didIntro, setDidIntro] = useState(false);
   const [showRagingGif, setShowRagingGif] = useState(false);
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
   const timers = useRef([]);
 
   const messages = [
