@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import {useNavigate} from 'react-router-dom';
 import MainTitel from './components/MainTitel';
 import StarBackground from './components/StarBackground';
 import talkingGif from './assets/whykirbyy-talking-animation-bubble.gif';
@@ -8,9 +9,7 @@ import sittingBunny from './assets/sitting.png';
 import skipedBunny from './assets/skip-bunny.png';
 import TextScroll from './components/TextScroll';
 import PixelButton from './components/PixelButton';
-import Window from './components/Window';
 //import ArrowButton from './components/ArrowButton.tsx';
-//import AppRouter from "./navigation/AppRouter.tsx"
 import './App.css';
 
 function App() {
@@ -21,7 +20,7 @@ function App() {
   const [skipBunny, setSkipBunny] = useState(false);
   const [didIntro, setDidIntro] = useState(false);
   const [showRagingGif, setShowRagingGif] = useState(false);
-
+  //const navigate = useNavigate();
   const timers = useRef([]);
 
   const messages = [
@@ -108,7 +107,6 @@ function App() {
 
   return (
     <div className="page-main-container">
-      {/*<Window title="whyKirbyy" text="Test text 123" />*/}
       <div className="titel-page-main-container">
         <div className="titel-page-main">
           <MainTitel text="whyKirbyy"/>
@@ -119,14 +117,14 @@ function App() {
       </div>
 
       {!didIntro &&
-          <>
-              <div className="skip-button">
-                  <PixelButton label="skip" onClick={handleSkip}/>
-              </div>
-              <div className="shutup-button">
-                  <PixelButton label="Shut up!" onClick={handleShutUp}/>
-              </div>
-          </>
+        <>
+          <div className="skip-button">
+            <PixelButton label="skip" onClick={handleSkip}/>
+          </div>
+          <div className="shutup-button">
+            <PixelButton label="Shut up!" onClick={handleShutUp}/>
+          </div>
+        </>
       }
 
       <div className="text-container">

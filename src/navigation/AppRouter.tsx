@@ -1,18 +1,15 @@
-import React from 'react';
-import {BrowserRouter, Route, Routes} from "react-router-dom";
-
-/* Routes  */
-import App from "../App.tsx";
+//import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import App from "../App.tsx"
 
 
-
-const AppRouter: React.FC = () => {
+const AppRouter = () => {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
-        <Route path="/" Component={App} />
+        <Route path="/" element={<App />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 };
 
