@@ -1,15 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=VT323&display=swap');
 
 $box-size: 500px;
-$border-color: #9f1bf5;
-$box-color: #fed5fb;
+$border-color: #afafaf; //stripes
+$box-color: #e4e4e4; //inside of stripes where text is
 $border-size: 2px;
-$background-color: #ffffff;
-$stripes: rgba(78, 132, 210, 0.3);
+$frame-color: #dddddd;
 
-.body {
-  background: $background-color;
-}
+
 
 .Frame {
   transform: scale(0.8);
@@ -22,7 +19,7 @@ $stripes: rgba(78, 132, 210, 0.3);
   border-bottom: $border-size solid $border-color;
   border-left: $border-size solid white;
   border-right: $border-size solid $border-color;
-  background-color: #6effeb;
+  background-color: $frame-color;
   position: relative;
   justify-content: center;
   flex-direction: column;
