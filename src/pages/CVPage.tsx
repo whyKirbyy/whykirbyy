@@ -1,17 +1,24 @@
-//import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "../style/CVPage.scss";
-import Window from"../components/Window"
-import StarBackground  from "../components/StarBackground.tsx";
+import Window from "../components/Window";
+import StarBackground from "../components/StarBackground";
 
-
-const CVPage = () => {
+const CVPage: React.FC = () => {
   const navigate = useNavigate();
+  const [cvContent, setCvContent] = useState<string>('');
+
+  useEffect(() => {
+    fetch('/src/components/CV.html')
+      .then(response => response.text())
+      .then(data => setCvContent(data));
+  }, []);
 
   return (
-    <div>
-      <h1>This is the CV Page</h1>
-      <Window />
+    <div className={"cv-page-container"}>
+      <Window title="CV of whyKirbyy">
+        <div dangerouslySetInnerHTML={{ __html: cvContent }} />
+      </Window>
       <button onClick={() => navigate('/')}>Go Back to Home</button>
       <StarBackground />
     </div>
