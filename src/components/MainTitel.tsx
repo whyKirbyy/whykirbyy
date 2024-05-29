@@ -1,5 +1,5 @@
 import React from 'react';
-import "./../style/MainTitel.scss"
+import "../style/components/MainTitel.scss"
 
 interface MainTitelProps {
   text: string;

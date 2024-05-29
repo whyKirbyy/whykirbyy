@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import "../style/CVPage.scss";
+import "../style/pages/CVPage.scss";
 import Window from "../components/Window";
 import StarBackground from "../components/StarBackground";
-import profileBunny from "../../public/profile_picture_cv.png";
 
 const CVPage: React.FC = () => {
   const navigate = useNavigate();

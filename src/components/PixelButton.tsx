@@ -1,5 +1,5 @@
 import React from 'react';
-import '../style/PixelButton.scss';
+import '../style/components/PixelButton.scss';
 
 interface PixelButtonProps {
   label: string;

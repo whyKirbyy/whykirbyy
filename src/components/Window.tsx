@@ -1,5 +1,5 @@
 import React from 'react';
-import "../style/Window.scss";
+import "../style/components/Window.scss";
 
 interface WindowProps {
   title?: string;

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import "../style/TextScroll.scss";
+import "../style/components/TextScroll.scss";
 
 const TextScroll = ({ messages, interval = 300, typingSpeed = 40, textColor = 'black', textSize = '1.25rem' }) => {
   const [currentMessage, setCurrentMessage] = useState('');
