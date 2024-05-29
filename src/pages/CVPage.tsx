@@ -8,6 +8,11 @@ const CVPage: React.FC = () => {
   const navigate = useNavigate();
   const [cvContent, setCvContent] = useState<string>('');
 
+  const navigateToHome = () => {
+    navigate('/');
+  };
+
+
   useEffect(() => {
     fetch('/src/components/CV.html')
       .then(response => response.text())
@@ -15,11 +20,11 @@ const CVPage: React.FC = () => {
   }, []);
 
   return (
-    <div className={"cv-page-container"}>
+    <div className="cv-page-container">
       <Window title="CV of whyKirbyy">
         <div dangerouslySetInnerHTML={{ __html: cvContent }} />
       </Window>
-      <button onClick={() => navigate('/')}>Go Back to Home</button>
+      <button onClick={navigateToHome}>Go Back to Home</button>
       <StarBackground />
     </div>
   );

@@ -9,7 +9,6 @@ import sittingBunny from './assets/sitting.png';
 import skipedBunny from './assets/skip-bunny.png';
 import TextScroll from './components/TextScroll';
 import PixelButton from './components/PixelButton';
-//import ArrowButton from './components/ArrowButton.tsx';
 import './App.css';
 
 function App() {
@@ -22,6 +21,10 @@ function App() {
   const [showRagingGif, setShowRagingGif] = useState(false);
   const navigate = useNavigate();
   const timers = useRef([]);
+
+  const navigateToCV = () => {
+    navigate('/CV');
+  };
 
   const messages = [
     "Hi there!",
@@ -112,19 +115,21 @@ function App() {
           <MainTitel text="whyKirbyy"/>
         </div>
       </div>
+      <div className="cv-button">
+        <button onClick={navigateToCV}>View CV</button>
+      </div>
       <div className={"button-arrow"}>
         {/*<ArrowButton direction="right" keyword="destination" />*/}
       </div>
-
       {!didIntro &&
-        <>
-          <div className="skip-button">
-            <PixelButton label="skip" onClick={handleSkip}/>
-          </div>
-          <div className="shutup-button">
-            <PixelButton label="Shut up!" onClick={handleShutUp}/>
-          </div>
-        </>
+          <>
+              <div className="skip-button">
+                  <PixelButton label="skip" onClick={handleSkip}/>
+              </div>
+              <div className="shutup-button">
+                  <PixelButton label="Shut up!" onClick={handleShutUp}/>
+              </div>
+          </>
       }
 
       <div className="text-container">
@@ -132,20 +137,22 @@ function App() {
       </div>
       <div className="text-container-rage">
         {showRagingGif && angryBunny &&
-          <TextScroll
-            messages={messagesAngry}
-            textColor="red"
-            textSize="3.4rem"
-          />}
+            <TextScroll
+                messages={messagesAngry}
+                textColor="red"
+                textSize="3.4rem"
+            />}
       </div>
       {showRagingGif &&
-        <div className={"temp-box"}></div>
+          <div className={"temp-box"}></div>
       }
       {showBunny && <img className="bunny" src={bunny} alt="whyKirbyy"/>}
       {showGif && <img className="gif" src={talkingGif} alt="whyKirbyy talking"/>}
       {showBunnySitting && <img className="sitting-bunny" src={sittingBunny} alt="whyKirbyy sitting"/>}
       {skipBunny && <img className="skiped-bunny" src={skipedBunny} alt="whyKirbyy sitting angry"/>}
-      {showRagingGif && <div className={"raging-bunny-zoom"}><img className="raging-bunny" src={ragingGif} alt="whyKirbyy talking"/></div>}
+      {showRagingGif &&
+          <div className={"raging-bunny-zoom"}><img className="raging-bunny" src={ragingGif} alt="whyKirbyy talking"/>
+          </div>}
       <StarBackground/>
     </div>
   );
