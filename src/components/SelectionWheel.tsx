@@ -10,6 +10,7 @@ type SelectionWheelProps = {
 
 const SelectionWheel: React.FC<SelectionWheelProps> = ({ options, startAngle = 0 }) => {
   const [rotation, setRotation] = useState(0);
+  const [isLocked, setIsLocked] = useState(false);
   const svgRef = useRef<SVGSVGElement | null>(null);
   const containerRef = useRef<SVGGElement | null>(null);
 
@@ -64,6 +65,8 @@ const SelectionWheel: React.FC<SelectionWheelProps> = ({ options, startAngle = 0
   }, [options, startAngle]);
 
   const handleWheel = (event: React.WheelEvent) => {
+    if (isLocked) return;
+
     const maxOptionsBeforeRotation = 4; // Number of elements before rotations start
     if (options.length > maxOptionsBeforeRotation) {
       let newRotation = rotation + event.deltaY * 0.1;
@@ -84,32 +87,19 @@ const SelectionWheel: React.FC<SelectionWheelProps> = ({ options, startAngle = 0
   };
 
   const checkRotation = (currentRotation: number) => {
-    const targetAngle1 = -30;
-    const targetAngle2 = 0;
-    const targetAngle3 = 30;
-    const targetAngle4 = 60;
-    const targetAngle5 = 90;
-    const targetAngle6 = 120;
+    const targetAngles = [-30, 0, 30, 60, 90, 120];
     const tolerance = 1.5;
 
-    if (Math.abs(currentRotation - targetAngle1) <= tolerance) {
-      console.log("Selection 6");
-      // Add specific action here
-    } else if (Math.abs(currentRotation - targetAngle2) <= tolerance) {
-      console.log("Selection 5");
-      // Add specific action here
-    } else if (Math.abs(currentRotation - targetAngle3) <= tolerance) {
-      console.log("Selection 4");
-      // Add specific action here
-    } else if (Math.abs(currentRotation - targetAngle4) <= tolerance) {
-      console.log("Selection 3");
-      // Add specific action here
-    } else if (Math.abs(currentRotation - targetAngle5) <= tolerance) {
-      console.log("Selection 2");
-      // Add specific action here
-    } else if (Math.abs(currentRotation - targetAngle6) <= tolerance) {
-      console.log("Selection 1");
-      // Add specific action here
+    for (const targetAngle of targetAngles) {
+      if (Math.abs(currentRotation - targetAngle) <= tolerance) {
+        setRotation(targetAngle);
+        d3.select(containerRef.current)
+          .attr('transform', `translate(200, 200) rotate(${targetAngle})`);
+        setIsLocked(true);
+        setTimeout(() => setIsLocked(false), 2);
+        console.log(targetAngle);
+        return;
+      }
     }
   };
 
