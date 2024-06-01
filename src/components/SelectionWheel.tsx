@@ -85,12 +85,30 @@ const SelectionWheel: React.FC<SelectionWheelProps> = ({ options, startAngle = 0
 
   const checkRotation = (currentRotation: number) => {
     const targetAngle1 = -30;
-    //const targetAngle2 = -30;
-    //const targetAngle3 = -30;
-    const tolerance = 2;
+    const targetAngle2 = 0;
+    const targetAngle3 = 30;
+    const targetAngle4 = 60;
+    const targetAngle5 = 90;
+    const targetAngle6 = 120;
+    const tolerance = 1.5;
 
     if (Math.abs(currentRotation - targetAngle1) <= tolerance) {
-      console.log(`Rotation is within ${tolerance} degrees of ${targetAngle1}: Do something specific`);
+      console.log("Selection 6");
+      // Add specific action here
+    } else if (Math.abs(currentRotation - targetAngle2) <= tolerance) {
+      console.log("Selection 5");
+      // Add specific action here
+    } else if (Math.abs(currentRotation - targetAngle3) <= tolerance) {
+      console.log("Selection 4");
+      // Add specific action here
+    } else if (Math.abs(currentRotation - targetAngle4) <= tolerance) {
+      console.log("Selection 3");
+      // Add specific action here
+    } else if (Math.abs(currentRotation - targetAngle5) <= tolerance) {
+      console.log("Selection 2");
+      // Add specific action here
+    } else if (Math.abs(currentRotation - targetAngle6) <= tolerance) {
+      console.log("Selection 1");
       // Add specific action here
     }
   };
