@@ -20,7 +20,7 @@ const SelectionWheel: React.FC<SelectionWheelProps> = ({ options, startAngle = 0
     const width = 400;
     const height = 400;
     const radius = Math.min(width, height) / 2;
-    const data = options.map((option, index) => ({ label: option, value: 1 }));
+    const data = options.map((option) => ({ label: option, value: 1 }));
 
     const svg = d3.select(svgRef.current)
       .attr("width", width)
@@ -79,26 +79,19 @@ const SelectionWheel: React.FC<SelectionWheelProps> = ({ options, startAngle = 0
       d3.select(containerRef.current)
         .attr('transform', `translate(200, 200) rotate(${newRotation})`);
 
-      detectOptionAtFixedAngle(90); // Detect option at the top of the wheel
+      checkRotation(newRotation);
     }
   };
 
-  const detectOptionAtFixedAngle = (fixedAngle: number) => {
-    const adjustedRotation = (rotation + 360) % 360; // Adjust rotation to be within [0, 360)
-    const fixedAngleRadians = fixedAngle * (Math.PI / 180);
+  const checkRotation = (currentRotation: number) => {
+    const targetAngle1 = -30;
+    const targetAngle2 = -30;
+    const targetAngle3 = -30;
+    const tolerance = 2;
 
-    const optionsWithAngles = options.map((option, index) => {
-      const angle = (startAngle + index * anglePerOption - adjustedRotation + 360) % 360;
-      const angleRadians = angle * (Math.PI / 180);
-      return { option, angleRadians };
-    });
-
-    const optionAtFixedAngle = optionsWithAngles.find(({ angleRadians }) =>
-      Math.abs(angleRadians - fixedAngleRadians) < 0.1
-    );
-
-    if (optionAtFixedAngle) {
-      console.log(`Option at ${fixedAngle} degrees: ${optionAtFixedAngle.option}`);
+    if (Math.abs(currentRotation - targetAngle1) <= tolerance) {
+      console.log(`Rotation is within ${tolerance} degrees of ${targetAngle1}: Do something specific`);
+      // Add specific action here
     }
   };
 
