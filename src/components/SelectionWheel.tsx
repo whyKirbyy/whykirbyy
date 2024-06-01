@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as d3 from 'd3';
 import "../style/components/SelectionWheel.scss";
+import SelectionWheelBackground from "./SelectionWheelBackground.tsx";
 
 type SelectionWheelProps = {
   options: string[];
@@ -26,7 +27,7 @@ const SelectionWheel: React.FC<SelectionWheelProps> = ({ options, startAngle = 0
       .attr("height", height)
       .style("overflow", "visible");
 
-    //clearing any existing <g> elements
+    // Clearing any existing <g> elements
     svg.selectAll("*").remove();
 
     const container = svg.append("g")
@@ -56,15 +57,18 @@ const SelectionWheel: React.FC<SelectionWheelProps> = ({ options, startAngle = 0
       })
       .attr("text-anchor", "middle")
       .attr("alignment-baseline", "middle")
+      .attr("fill", "#E87889")
+      .attr("stroke", "#F7E73D")
+      .attr("stroke-width", "1px")
       .text(d => d.data.label);
   }, [options, startAngle]);
 
   const handleWheel = (event: React.WheelEvent) => {
-    const maxOptionsBeforeRotation = 4; //number of elements before rotations start
+    const maxOptionsBeforeRotation = 4; // Number of elements before rotations start
     if (options.length > maxOptionsBeforeRotation) {
       let newRotation = rotation + event.deltaY * 0.1;
 
-      //rotation stop point
+      // Rotation stop point
       if (newRotation > maxRotation - anglePerOption) {
         newRotation = maxRotation - anglePerOption;
       } else if (newRotation < -(anglePerOption)) {
@@ -74,12 +78,36 @@ const SelectionWheel: React.FC<SelectionWheelProps> = ({ options, startAngle = 0
       setRotation(newRotation);
       d3.select(containerRef.current)
         .attr('transform', `translate(200, 200) rotate(${newRotation})`);
+
+      detectOptionAtFixedAngle(90); // Detect option at the top of the wheel
+    }
+  };
+
+  const detectOptionAtFixedAngle = (fixedAngle: number) => {
+    const adjustedRotation = (rotation + 360) % 360; // Adjust rotation to be within [0, 360)
+    const fixedAngleRadians = fixedAngle * (Math.PI / 180);
+
+    const optionsWithAngles = options.map((option, index) => {
+      const angle = (startAngle + index * anglePerOption - adjustedRotation + 360) % 360;
+      const angleRadians = angle * (Math.PI / 180);
+      return { option, angleRadians };
+    });
+
+    const optionAtFixedAngle = optionsWithAngles.find(({ angleRadians }) =>
+      Math.abs(angleRadians - fixedAngleRadians) < 0.1
+    );
+
+    if (optionAtFixedAngle) {
+      console.log(`Option at ${fixedAngle} degrees: ${optionAtFixedAngle.option}`);
     }
   };
 
   return (
-    <div className="selection-wheel" onWheel={handleWheel}>
-      <svg ref={svgRef}></svg>
+    <div className="selection-wheel-container">
+      <div className="selection-wheel" onWheel={handleWheel}>
+        <svg ref={svgRef}></svg>
+      </div>
+      <SelectionWheelBackground />
     </div>
   );
 };

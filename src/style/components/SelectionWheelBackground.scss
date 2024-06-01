@@ -1,0 +1,55 @@
+@import "../../theme";
+
+.SelectionWheelBackground {
+    position: absolute;
+    top: -2rem;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 6;
+}
+
+.half-circle {
+  width: 600px;
+  height: 400px;
+  background: $blue;
+  position: absolute;
+  top: 78%;
+  right: -16rem;
+  transform: rotate(-90deg);
+  transform-origin: 0 0;
+  border-top-left-radius: 300px;
+  border-top-right-radius: 300px;
+  z-index: 1;
+}
+
+.half-circle2 {
+  width: 585px;
+  height: 400px;
+  background: $blue;
+  position: absolute;
+  top: 78%;
+  right: -16rem;
+  transform: rotate(-90deg);
+  transform-origin: 0 0;
+  border-top-left-radius: 300px;
+  border-top-right-radius: 300px;
+  z-index: 7;
+}
+
+.piece-of-cake-container {
+  position: absolute;
+  top: -5rem;
+  right: 0.5rem;
+  width: 400px;
+  height: 400px;
+  z-index: 6;
+  pointer-events: none;
+}
+
+.piece-of-cake {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-133deg);
+  fill: white;
+}

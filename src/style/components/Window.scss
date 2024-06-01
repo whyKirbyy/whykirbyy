@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=VT323&display=swap');
 
-$box-size: 75vw;
+$box-size: 70vw;
 $border-color: #afafaf; //stripes
 $box-color: #e4e4e4; //inside of stripes where text is
 $border-size: 2px;
@@ -68,6 +68,7 @@ $frame-color: #dddddd;
     flex: 1;
     width: calc(#{$box-size} - #{$border-size * 4});
     margin: $border-size * 2;
+    margin-top: 0.5;
     background: $box-color;
     border: $border-size solid $border-color;
     padding: $border-size;

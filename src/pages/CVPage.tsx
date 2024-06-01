@@ -4,12 +4,12 @@ import "../style/pages/CVPage.scss";
 import Window from "../components/Window";
 import StarBackground from "../components/StarBackground";
 import bunnyDesk from "../assets/bunnyDesk.png";
-import SelectionWheel from "../components/selectionWheel";
+import SelectionWheel from "../components/SelectionWheel.tsx";
 
 const CVPage: React.FC = () => {
   const navigate = useNavigate();
   const [cvContent, setCvContent] = useState<string>('');
-  const options = ['Selection 1', 'Selection 2', 'Selection 3', 'Selection 4', 'Selection 5'];
+  const options = ['Selection 11', 'Selection 12', 'Selection 13', 'Selection 14', 'Selection 15', "Selection 16"];
 
   const navigateToHome = () => {
     navigate('/');
