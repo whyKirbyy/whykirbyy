@@ -85,8 +85,8 @@ const SelectionWheel: React.FC<SelectionWheelProps> = ({ options, startAngle = 0
 
   const checkRotation = (currentRotation: number) => {
     const targetAngle1 = -30;
-    const targetAngle2 = -30;
-    const targetAngle3 = -30;
+    //const targetAngle2 = -30;
+    //const targetAngle3 = -30;
     const tolerance = 2;
 
     if (Math.abs(currentRotation - targetAngle1) <= tolerance) {
