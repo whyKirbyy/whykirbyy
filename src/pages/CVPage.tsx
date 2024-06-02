@@ -31,7 +31,7 @@ const CVPage: React.FC = () => {
 
   return (
     <div className="cv-page-container">
-      <img className="bunnyDesk" src={bunnyDesk} alt="sitting bunny" />
+      {/*<img className="bunnyDesk" src={bunnyDesk} alt="sitting bunny" />*/}
       <div className={"cvwindow-page"}>
         <Window title="CV of whyKirbyy">
           <div dangerouslySetInnerHTML={{ __html: cvContent }} />

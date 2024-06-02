@@ -15,18 +15,30 @@ const Window: React.FC<WindowProps> = ({ title, text, children }) => {
   };
 
   return (
-    <div className={`Frame ${isMinimized ? 'minimized' : ''}`}>
-      <div className="header">
-        {title && <h1>{title}</h1>}
-        <button className="minimize" onClick={handleMinimize}>―</button>
-        <button className="close">X</button>
-        <button className="maximize">▢</button>
-      </div>
+    <div>
       {!isMinimized && (
+      <div className={"Frame"}>
+        <div className="header">
+          {title && <h1>{title}</h1>}
+          <button className="minimize" onClick={handleMinimize}>―</button>
+          <button className="close">X</button>
+          <button className="maximize">▢</button>
+        </div>
         <div className="body">
           {text && <p>{text}</p>}
           {children}
         </div>
+      </div>
+      )}
+      {isMinimized && (
+      <div className={"Frame2"}>
+        <div className="header2">
+          <button className="maximize2" onClick={handleMinimize}>▢</button>
+        </div>
+        <div className="body2">
+          "text"
+        </div>
+      </div>
       )}
     </div>
   );
