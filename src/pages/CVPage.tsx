@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "../style/pages/CVPage.scss";
 import Window from "../components/Window";
@@ -10,6 +10,13 @@ const CVPage: React.FC = () => {
   const navigate = useNavigate();
   const [cvContent, setCvContent] = useState<string>('');
   const options = ['Selection 1', 'Selection 2', 'Selection 3', 'Selection 4', 'Selection 5', "Selection 6"];
+  const wheelRef = useRef(null);
+
+  const rotateWheel = () => {
+    if (wheelRef.current) {
+      wheelRef.current.setRotation(90); // Rotate to 90 degrees
+    }
+  };
 
   const navigateToHome = () => {
     navigate('/');
@@ -25,13 +32,13 @@ const CVPage: React.FC = () => {
   return (
     <div className="cv-page-container">
       <img className="bunnyDesk" src={bunnyDesk} alt="sitting bunny" />
-      <SelectionWheel options={options} startAngle={90} />
       <div className={"cvwindow-page"}>
         <Window title="CV of whyKirbyy">
           <div dangerouslySetInnerHTML={{ __html: cvContent }} />
         </Window>
       </div>
       <button onClick={navigateToHome}>Go Back to Home</button>
+      <SelectionWheel startAngle={90} ref={wheelRef} options={options} />
       <StarBackground />
     </div>
   );

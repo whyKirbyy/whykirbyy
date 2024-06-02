@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useImperativeHandle, forwardRef } from 'react';
 import * as d3 from 'd3';
 import "../style/components/SelectionWheel.scss";
 import SelectionWheelBackground from "./SelectionWheelBackground.tsx";
@@ -8,12 +8,11 @@ type SelectionWheelProps = {
   startAngle?: number;
 };
 
-const SelectionWheel: React.FC<SelectionWheelProps> = ({ options, startAngle = 0 }) => {
+const SelectionWheel: React.FC<SelectionWheelProps & { ref?: React.Ref<any> }> = forwardRef(({ options, startAngle = 0 }, ref) => {
   const [rotation, setRotation] = useState(0);
-  const [isLocked, setIsLocked] = useState(false);
+  const [currentSelection, setCurrentSelection] = useState<string | null>(null);
   const svgRef = useRef<SVGSVGElement | null>(null);
   const containerRef = useRef<SVGGElement | null>(null);
-
   const anglePerOption = 180 / options.length;
   const maxRotation = (options.length - 1) * anglePerOption;
 
@@ -46,7 +45,9 @@ const SelectionWheel: React.FC<SelectionWheelProps> = ({ options, startAngle = 0
       .data(pie(data))
       .enter()
       .append("g")
-      .attr("class", "slice");
+      .attr("class", "slice")
+      .style("pointer-events", "all")
+      .on("click", (event, d) => handleClick(d.index));
 
     arcs.append("text")
       .attr("transform", function (d) {
@@ -59,19 +60,22 @@ const SelectionWheel: React.FC<SelectionWheelProps> = ({ options, startAngle = 0
       .attr("text-anchor", "middle")
       .attr("alignment-baseline", "middle")
       .attr("fill", "#E87889")
-      .attr("stroke", "#F7E73D")
+      .attr("stroke", "#00000000")
       .attr("stroke-width", "1px")
-      .text(d => d.data.label);
+      .text(d => d.data.label)
+      .on("mouseover", function (event, d) {
+        d3.select(this).attr("stroke", "#FFFFFF");
+      })
+      .on("mouseout", function (event, d) {
+        d3.select(this).attr("stroke", "#00000000");
+      });
   }, [options, startAngle]);
 
   const handleWheel = (event: React.WheelEvent) => {
-    if (isLocked) return;
-
-    const maxOptionsBeforeRotation = 4; // Number of elements before rotations start
+    const maxOptionsBeforeRotation = 4;
     if (options.length > maxOptionsBeforeRotation) {
       let newRotation = rotation + event.deltaY * 0.1;
 
-      // Rotation stop point
       if (newRotation > maxRotation - anglePerOption) {
         newRotation = maxRotation - anglePerOption;
       } else if (newRotation < -(anglePerOption)) {
@@ -88,29 +92,59 @@ const SelectionWheel: React.FC<SelectionWheelProps> = ({ options, startAngle = 0
 
   const checkRotation = (currentRotation: number) => {
     const targetAngles = [-30, 0, 30, 60, 90, 120];
-    const tolerance = 1.5;
+    const tolerance = 1.2;
 
-    for (const targetAngle of targetAngles) {
+    for (const [index, targetAngle] of targetAngles.entries()) {
       if (Math.abs(currentRotation - targetAngle) <= tolerance) {
         setRotation(targetAngle);
         d3.select(containerRef.current)
           .attr('transform', `translate(200, 200) rotate(${targetAngle})`);
-        setIsLocked(true);
-        setTimeout(() => setIsLocked(false), 2);
-        console.log(targetAngle);
+        setCurrentSelection(options[options.length - 1 - index]); // Update current selection with the option text
         return;
       }
     }
   };
 
+  const handleClick = (index: number) => {
+    const angles = [120, 90, 60, 30, 0, -30];
+    const angle = angles[index];
+    if (angle !== undefined) {
+      setRotationFromOutside(angle, options[index]);
+    } else {
+      console.log("Current Selection never changed", currentSelection);
+    }
+  };
+
+  const setRotationFromOutside = (angle: number, selection: string) => {
+    setRotation(angle);
+    setCurrentSelection(selection);
+    if (containerRef.current) {
+      d3.select(containerRef.current)
+        .transition()
+        .duration(500)
+        .attr('transform', `translate(200, 200) rotate(${angle})`);
+    }
+  };
+
+  useImperativeHandle(ref, () => ({
+    setRotation: setRotationFromOutside
+  }));
+
+  const handleButtonClick = () => {
+    console.log(currentSelection);
+  };
+
   return (
     <div className="selection-wheel-container">
+      <button className="half-circle-button" onClick={handleButtonClick}>
+        <div className={"button-text"}>Select Record</div>
+      </button>
       <div className="selection-wheel" onWheel={handleWheel}>
         <svg ref={svgRef}></svg>
       </div>
       <SelectionWheelBackground />
     </div>
   );
-};
+});
 
 export default SelectionWheel;

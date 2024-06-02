@@ -1,12 +1,12 @@
 @import "../../theme";
 
 .SelectionWheelBackground {
-    position: absolute;
-    top: -2rem;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 6;
+  position: absolute;
+  top: -2rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 6;
 }
 
 .half-circle {
@@ -39,7 +39,7 @@
 
 .piece-of-cake-container {
   position: absolute;
-  top: -5rem;
+  top: -5.5rem;
   right: 0.5rem;
   width: 400px;
   height: 400px;
@@ -50,6 +50,7 @@
 .piece-of-cake {
   width: 100%;
   height: 100%;
-  transform: rotate(-133deg);
+  transform: rotate(-132deg);
   fill: white;
 }
+
