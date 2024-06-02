@@ -32,7 +32,7 @@ const Window: React.FC<WindowProps> = ({ title, text, children }) => {
       </div>
       )}
       {isMinimized && (
-      <div className={"Frame2"} onClick={handleMinimize}>
+      <div className={"Frame2 float-shadow minimized-position"} onClick={handleMinimize}>
         <div className="header2">CV of whyKirbyy</div>
         <div className="body2">
           <div className={"mini-cv"}>

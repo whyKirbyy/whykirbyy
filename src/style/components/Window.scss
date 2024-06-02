@@ -166,6 +166,7 @@ $border-color: #afafaf; //stripes
 $box-color: #e4e4e4; //inside of stripes where text is
 $border-size2: 1px;
 $frame-color: #dddddd;
+$defaultDuration: .3s;
 
 .Frame2 {
   transform: scale(0.8);
@@ -178,12 +179,11 @@ $frame-color: #dddddd;
   border: black $border-size2 solid;
   border-radius: 0.5em;
   background-color: $frame-color;
-  position: relative;
   justify-content: center;
   flex-direction: column;
 
   &:hover{
-    border: #ff006f $border-size2 solid;
+    border: #f6ff00 $border-size2 solid;
     background-color: darken($frame-color, 5%);
   }
 
@@ -203,89 +203,11 @@ $frame-color: #dddddd;
     padding: $border-size;
   }
 }
-.minimize{
-  background: #ffff00;
-  border: darken(#ffff00, 15%) $border-size solid;
-  cursor: pointer;
-
-  &:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-left: lighten(#ffff00, 25%) solid $border-size;
-    border-top: lighten(#ffff00, 25%) solid $border-size;
-    top: -$border-size;
-    left: -$border-size;
-    z-index: 100;
-  }
-  &:active {
-    border-left: darken(#ffff00, 15%) $border-size solid;
-    border-top: darken(#ffff00, 15%) $border-size solid;
-
-    &:before {
-      content: none;
-    }
-  }
-}
-
-.close{
-  background: #ff0000;
-  border: darken(#ff0000, 15%) $border-size solid;
-  cursor: pointer;
-
-  &:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-left: lighten(#ff0000, 25%) solid $border-size;
-    border-top: lighten(#ff0000, 25%) solid $border-size;
-    top: -$border-size;
-    left: -$border-size;
-    z-index: 2;
-  }
-  &:active {
-    border-left: darken(#ff0000, 15%) $border-size solid;
-    border-top: darken(#ff0000, 15%) $border-size solid;
-
-    &:before {
-      content: none;
-    }
-  }
-}
-
-.maximize {
-  background: #00ff00;
-  border: darken(#00ff00, 15%) $border-size solid;
-  cursor: pointer;
-
-  &:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-left: lighten(#00ff00, 25%) solid $border-size;
-    border-top: lighten(#00ff00, 25%) solid $border-size;
-    top: -$border-size;
-    left: -$border-size;
-    z-index: 2;
-  }
-
-  &:active {
-    border-left: darken(#00ff00, 15%) solid $border-size;
-    border-top: darken(#00ff00, 15%) solid $border-size;
-
-    &:before {
-      content: none;
-    }
-  }
-}
 
 .body2 {
   height: 9vh;
   width: auto;
-  overflow-y: auto;
+  overflow-y: hidden;
   overflow-x: hidden;
   justify-content: center;
   align-items: center;
@@ -300,4 +222,47 @@ $frame-color: #dddddd;
   transform-origin: top left;
   width: 1000%;
   height: 1100%;
+}
+
+@mixin hideTapHighlightColor() {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+@mixin hardwareAccel() {
+  transform: translateZ(0);
+}
+
+@mixin improveAntiAlias() {
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+.float-shadow {
+  display: inline-block;
+  position: relative;
+  transition-duration: $defaultDuration;
+  transition-property: transform;
+
+  @include hideTapHighlightColor();
+  @include hardwareAccel();
+  @include improveAntiAlias();
+
+  &:before {
+    pointer-events: none;
+    position: absolute;
+    z-index: -1;
+    content: '';
+    top: 100%;
+    left: 5%;
+    height: 10px;
+    width: 90%;
+    opacity: 1; // Always visible
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.91) 0%, rgba(0,0,0,0) 80%); /* W3C */
+    transform: translateY(5px); // Always positioned
+  }
+}
+
+.minimized-position {
+  position: absolute;
+  top: 85vh;
+  left: 20vw;
 }
