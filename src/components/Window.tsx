@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import "../style/components/Window.scss";
+import cv from "../assets/cv.png"
 
 interface WindowProps {
   title?: string;
@@ -31,12 +32,14 @@ const Window: React.FC<WindowProps> = ({ title, text, children }) => {
       </div>
       )}
       {isMinimized && (
-      <div className={"Frame2"}>
-        <div className="header2">
-          <button className="maximize2" onClick={handleMinimize}>▢</button>
-        </div>
+      <div className={"Frame2"} onClick={handleMinimize}>
+        <div className="header2">CV of whyKirbyy</div>
         <div className="body2">
-          "text"
+          <div className={"mini-cv"}>
+            {text && <p>{text}</p>}
+            {children}
+          </div>
+          {/*<img src={cv} className={"mini-cv"} alt="mini-cv"/>*/}
         </div>
       </div>
       )}

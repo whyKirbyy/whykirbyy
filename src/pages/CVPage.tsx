@@ -9,7 +9,7 @@ import SelectionWheel from "../components/SelectionWheel.tsx";
 const CVPage: React.FC = () => {
   const navigate = useNavigate();
   const [cvContent, setCvContent] = useState<string>('');
-  const options = ['Selection 1', 'Selection 2', 'Selection 3', 'Selection 4', 'Selection 5', "Selection 6"];
+  const options = ["Skills", "Programming", "Job Experience", "Education", "Short CV", "About me"];
   const wheelRef = useRef(null);
 
   const rotateWheel = () => {

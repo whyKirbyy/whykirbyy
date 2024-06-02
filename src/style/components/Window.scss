@@ -161,7 +161,7 @@ $frame-color: #dddddd;
 
 //////////////////////////////////minimized window/////////////////////////////////////////
 
-$box-size2: 2vw;
+$box-size2: 6vw;
 $border-color: #afafaf; //stripes
 $box-color: #e4e4e4; //inside of stripes where text is
 $border-size2: 1px;
@@ -175,50 +175,20 @@ $frame-color: #dddddd;
   font-family: 'VT323', monospace;
   display: flex;
   width: $box-size2;
-  border-top: $border-size2 solid white;
-  border-bottom: $border-size2 solid $border-color;
-  border-left: $border-size2 solid white;
-  border-right: $border-size2 solid $border-color;
+  border: black $border-size2 solid;
+  border-radius: 0.5em;
   background-color: $frame-color;
   position: relative;
   justify-content: center;
   flex-direction: column;
 
-  .header {
-    display: flex;
-    margin: $border-size2 * 2;
-    margin-bottom: 0;
-    box-sizing: border-box;
-    width: calc(#{$box-size2} - #{$border-size2 * 4});
-    height: 0.1em;
-    margin-top: $border-size2 * 2;
-    padding: $border-size2 * 2;
-    background: $box-color;
-    border: $border-size2 solid $border-color;
+  &:hover{
+    border: #ff006f $border-size2 solid;
+    background-color: darken($frame-color, 5%);
+  }
 
-    h1 {
-      margin-right: auto;
-      margin-top: auto;
-      margin-bottom: auto;
-      font-size: 0.0075em;
-      font-weight: bold;
-    }
-
-    button {
-      align-self: flex-end;
-      flex: 0 1 auto;
-      margin: auto $border-size2;
-
-      width: 2em;
-      height: 2em;
-      color: darken($border-color, 30%);
-      font-weight: bold;
-      font-size: 0.7em;
-      line-height: 1em;
-      -webkit-text-stroke: $border-size - 1px;
-      position: relative;
-
-    }
+  .header2 {
+    font-size: 1em;
   }
 
   .body {
@@ -312,8 +282,22 @@ $frame-color: #dddddd;
   }
 }
 
-.body {
-  max-height: 90vh;
+.body2 {
+  height: 9vh;
+  width: auto;
   overflow-y: auto;
   overflow-x: hidden;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.mini-cv {
+  transform: scale(0.1);
+  transform-origin: top left;
+  width: 1000%;
+  height: 1100%;
 }
