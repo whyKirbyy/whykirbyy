@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "../style/pages/CVPage.scss";
-import Window from "../components/Window";
+import WindowCV from "../components/WindowCV.tsx";
 import StarBackground from "../components/StarBackground";
 import bunnyDesk from "../assets/bunnyDesk.png";
 import SelectionWheel from "../components/SelectionWheel.tsx";
@@ -33,9 +33,9 @@ const CVPage: React.FC = () => {
     <div className="cv-page-container">
       <img className="bunnyDesk" src={bunnyDesk} alt="sitting bunny" />
       <div className={"cvwindow-page"}>
-        <Window title="CV of whyKirbyy">
+        <WindowCV title="CV of whyKirbyy">
           <div dangerouslySetInnerHTML={{ __html: cvContent }} />
-        </Window>
+        </WindowCV>
       </div>
       <button onClick={navigateToHome}>Go Back to Home</button>
       <SelectionWheel startAngle={90} ref={wheelRef} options={options} />

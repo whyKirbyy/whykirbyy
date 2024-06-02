@@ -181,14 +181,23 @@ $defaultDuration: .3s;
   background-color: $frame-color;
   justify-content: center;
   flex-direction: column;
+  position: relative; /* Ensure the child elements are positioned relative to this */
 
   &:hover{
     border: #f6ff00 $border-size2 solid;
     background-color: darken($frame-color, 5%);
   }
 
+  &:hover .minimized-close {
+    display: flex; /* Show the minimized-close button on hover */
+  }
+
   .header2 {
     font-size: 1em;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .body {
@@ -266,3 +275,32 @@ $defaultDuration: .3s;
   top: 85vh;
   left: 20vw;
 }
+
+.minimized-close {
+  background: #dddddd;
+  border: $border-size solid $border-color;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 0.8rem;
+  height: 0.8rem;
+  font-size: 0.7rem;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  position: absolute;
+  top: 55rem;
+  left: 27.5rem;
+  z-index: 1000;
+
+  &:hover {
+    background: darken(#dddddd, 15%);
+  }
+
+  &:active {
+    border: $border-size solid #dddddd;
+  }
+}
+
+
