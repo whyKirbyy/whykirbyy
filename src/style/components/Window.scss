@@ -88,7 +88,7 @@ $frame-color: #dddddd;
     border-top: lighten(#ffff00, 25%) solid $border-size;
     top: -$border-size;
     left: -$border-size;
-    z-index: 2;
+    z-index: 100;
   }
   &:active {
     border-left: darken(#ffff00, 15%) $border-size solid;

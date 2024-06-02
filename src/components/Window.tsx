@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "../style/components/Window.scss";
 
 interface WindowProps {
@@ -8,18 +8,26 @@ interface WindowProps {
 }
 
 const Window: React.FC<WindowProps> = ({ title, text, children }) => {
+  const [isMinimized, setIsMinimized] = useState(false);
+
+  const handleMinimize = () => {
+    setIsMinimized(!isMinimized);
+  };
+
   return (
-    <div className="Frame">
+    <div className={`Frame ${isMinimized ? 'minimized' : ''}`}>
       <div className="header">
         {title && <h1>{title}</h1>}
-        <button className="minimize">―</button>
+        <button className="minimize" onClick={handleMinimize}>―</button>
         <button className="close">X</button>
         <button className="maximize">▢</button>
       </div>
-      <div className="body">
-        {text && <p>{text}</p>}
-        {children}
-      </div>
+      {!isMinimized && (
+        <div className="body">
+          {text && <p>{text}</p>}
+          {children}
+        </div>
+      )}
     </div>
   );
 };
