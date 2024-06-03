@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import "../style/components/Window.scss";
-import cv from "../assets/cv.png"
 
 interface WindowProps {
   title?: string;
@@ -38,8 +37,8 @@ const WindowCV: React.FC<WindowProps> = ({ title, text, children }) => {
       )}
       {isMinimized && !isClosed && (
         <div>
-          <div className={"minimized-close"} onClick={handleClose}>X</div>
           <div className={"Frame2 float-shadow minimized-position"} onClick={handleMinimize}>
+            <div className={"minimized-close"} onClick={handleClose}>X</div>
             <div className="header2">CV of whyKirbyy</div>
             <div className="body2">
               <div className={"mini-cv"}>
