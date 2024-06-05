@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffb457;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 100%;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  background-color: #1d1d27;
+  clip-path: path("M 0 0 Q 100 50 0 100 V 100 H 0 Z");
+}
+
+.sidebar__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100px;
+  cursor: pointer;
+  color: white;
+  transition: background-color 0.7s;
+}
+
+.sidebar__item.active {
+  background-color: #ff96bd;
+}

@@ -9,6 +9,7 @@ import sittingBunny from './assets/sitting.png';
 import skipedBunny from './assets/skip-bunny.png';
 import TextScroll from './components/TextScroll';
 import PixelButton from './components/PixelButton';
+import Sidebar from "./components/Sidebar.tsx";
 import './App.css';
 
 function App() {
@@ -111,15 +112,19 @@ function App() {
   return (
     <div className="page-main-container">
       <div className="titel-page-main-container">
+        {/*}
         <div className="titel-page-main">
           <MainTitel text="whyKirbyy"/>
         </div>
+        */}
       </div>
+      {/*
       <div className="cv-button">
         <button onClick={navigateToCV}>View CV</button>
       </div>
-      <div className={"button-arrow"}>
-        {/*<ArrowButton direction="right" keyword="destination" />*/}
+      */}
+      <div className={"sidebar"}>
+        <Sidebar/>
       </div>
       {!didIntro &&
           <>

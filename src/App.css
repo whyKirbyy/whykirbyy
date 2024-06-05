@@ -148,3 +148,9 @@
     left: 75%;
     z-index: 15;
 }
+
+.sidebar {
+    position: absolute;
+    top: 0;
+    z-index: 15;
+}
