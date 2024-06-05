@@ -9,7 +9,7 @@ import sittingBunny from './assets/sitting.png';
 import skipedBunny from './assets/skip-bunny.png';
 import TextScroll from './components/TextScroll';
 import PixelButton from './components/PixelButton';
-import Sidebar from "./components/Sidebar.tsx";
+import Menu from "./components/Menu.tsx";
 import './App.css';
 
 function App() {
@@ -124,7 +124,7 @@ function App() {
       </div>
       */}
       <div className={"sidebar"}>
-        <Sidebar/>
+        <Menu/>
       </div>
       {!didIntro &&
           <>
