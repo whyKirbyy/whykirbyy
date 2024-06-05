@@ -35,7 +35,7 @@ body {
   padding: 0 2.85em;
   position: relative;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between; /* Distribute items evenly */
   background-color: var(--bgColorMenu);
 }
 
@@ -67,17 +67,44 @@ body {
   stroke-dasharray: 400;
 }
 
-.menu__border {
+.menu__border1 {
   bottom: 99%;
-  width: 85%;
-  height: 3em;
-  margin-right: 1em;
+  width: 80%;
+  height: 2em;
   position: absolute;
   clip-path: url(#menu);
   background-color: var(--bgColorMenu);
+  left: 0; /* Position at the start */
+}
+
+.menu__border2 {
+  bottom: 99%;
+  width: 80%;
+  height: 2em;
+  position: absolute;
+  clip-path: url(#menu);
+  background-color: var(--bgColorMenu);
+  right: 0; /* Position at the end */
+}
+
+.menu__box {
+  position: absolute;
+  width: 10em;
+  height: 3.3em;
+  background-color: var(--bgColorMenu);
+  z-index: 50;
+  top: 1%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .svg-container {
   width: 0;
   height: 0;
+}
+
+@media screen and (max-width: 50em) {
+  .menu {
+    font-size: 0.8em;
+  }
 }

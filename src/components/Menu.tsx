@@ -7,6 +7,7 @@ const Menu: React.FC = () => {
   return (
     <div className="menu-container">
       <div className="menu">
+        <div className="menu__border1"></div>
         <button
           className={`menu__item ${activeIndex === 0 ? 'active' : ''}`}
           style={{ '--bgColorItem': '#ff8c00' } as React.CSSProperties}
@@ -18,7 +19,19 @@ const Menu: React.FC = () => {
             <path d="M3.8,17.5h16.4" />
           </svg>
         </button>
-        <div className="menu__border"></div>
+        <button
+          className={`menu__item ${activeIndex === 1 ? 'active' : ''}`}
+          style={{ '--bgColorItem': '#ff8c00' } as React.CSSProperties}
+          onClick={() => setActiveIndex(1)}
+        >
+          <svg className="icon" viewBox="0 0 24 24">
+            <path d="M3.8,6.6h16.4" />
+            <path d="M20.2,12.1H3.8" />
+            <path d="M3.8,17.5h16.4" />
+          </svg>
+        </button>
+        <div className="menu__box"></div>
+        <div className="menu__border2"></div>
       </div>
       <div className="svg-container">
         <svg viewBox="0 0 202.9 45.5">
