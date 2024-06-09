@@ -4,3 +4,4 @@ The website should be built like the inside of a computer, away from the video g
 The spinning selection wheel is like an HDD thing.
 
 ## Features
+Site has to remember who visited. So that dialog can be changed accordingly
