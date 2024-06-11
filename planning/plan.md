@@ -7,7 +7,7 @@ The project showroom should be like a cpu or gpu
 
 The email thing should be like a modem or networking stuff
 
-
+In the HDD thing maybe could make it that peopke have to swap drives to get certain infos
 
 ## Features
 Site has to remember who visited. So that dialog can be changed accordingly
