@@ -6,4 +6,5 @@ The spinning selection wheel is like an HDD thing.
 ## Features
 Site has to remember who visited. So that dialog can be changed accordingly
 
-Contac form where peioke can send ideas
+Contact form where people can send ideas and that checks for the content.
+Based on this makes counter what got pitched how many times.
