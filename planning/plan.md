@@ -16,4 +16,4 @@ Contact form where people can send ideas and that checks for the content.
 Based on this makes counter what got pitched how many times.
 
 ## Concepts
-bunny could be like cortana from halo.
+bunny could be like cortana from halo or so.
