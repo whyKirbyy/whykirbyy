@@ -1,0 +1,36 @@
+.header{
+    display: flex;
+    align-items: center;
+    padding-left: 1.5vw;
+    margin-right: 5%;
+    gap: 2vw;
+}
+
+.title{
+    white-space: nowrap;
+    .mainTitle{
+        font-size: var(--font-size-title);
+        line-height: 0;
+    }
+
+    .subTitle{
+        font-size: var(--font-size-highligh);
+        line-height: 0;
+    }
+}
+
+.navList{
+    display: flex;
+    font-size: var(--font-size-default);
+    line-height: 0;
+
+    .navItem{
+        display: flex;
+
+        .value{
+            text-decoration: none;
+            color: var(--highlight-color-green);
+            cursor: pointer;
+        }
+    }
+}
