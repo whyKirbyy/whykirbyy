@@ -12,7 +12,7 @@ const Header: React.FC = () => {
                     <span className={styles.darkerFont}>import</span>
                     <span>&nbsp;whyKirbyy</span>
                 </div>
-                <span className={styles.darkerFont}>from typing import Dict, Any</span>
+                <span className={styles.darkerFont}>from typing import Dict, Any, List, Union</span>
                 <span className={styles.darkerFont}>from dataclasses import dataclass</span>
                 <span className={styles.darkerFont}>import httpx</span>
                 <span className={styles.darkerFont}><br/></span>

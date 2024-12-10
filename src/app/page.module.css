@@ -27,6 +27,7 @@
     .text{
         max-width: 100%;
         align-self: flex-start;
+        color: var(--text-color);
     }
 }
 
@@ -48,4 +49,9 @@
     display: flex;
     max-width: 100%;
     align-self: flex-start;
+}
+
+.link{
+    color: var(--highlight-color-green);
+    text-decoration: none;
 }
