@@ -5,7 +5,7 @@ import Header from "./components/header"
 
 export const metadata: Metadata = {
   title: "whyKirbyy",
-  description: "The personal site of whyKirbyy",
+  description: "The site of whyKirbyy",
 };
 
 export default function RootLayout({children,}: Readonly<{children: React.ReactNode; }>) {
