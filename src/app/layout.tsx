@@ -11,9 +11,13 @@ export const metadata: Metadata = {
 export default function RootLayout({children,}: Readonly<{children: React.ReactNode; }>) {
     return (
         <html lang="en">
-            <body>
-                <Header />
-                {children}
+        <head>
+            <title>whyKirbyy</title>
+            <link rel="icon" href="/favicon.png" title={"favicon"}/>
+        </head>
+        <body>
+        <Header/>
+        {children}
             </body>
         </html>
     );

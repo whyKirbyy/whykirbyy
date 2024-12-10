@@ -1,20 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Manrope:wght@200..800&display=swap');
 
 body{
     color: var(--text-color);
     background: var(--background-color);
     font-family: "Source Code Pro", monospace;
+    padding-left: 1.5vw;
 }
 
 :root {
     --font-family: "Source Code Pro", monospace;
+    --font-arrow: "Inter", monospace;
     --font-size-default: clamp(1.25rem, 0.5vw + 0.25rem, 2rem);
     --font-size-highlight: clamp(1.5rem, 1.1vw + 0.5rem, 2.5rem);
     --font-size-title: clamp(1.75rem, 1.3vw + 0.75rem, 3rem);
 
     --background-color: #012B36;
-    --text-color: #ffffff;
-    --text-color-shaded: #617B80;
+    --text-color: #dddddd;
+    --text-color-shaded: rgba(63, 91, 99, 0.9);
     --highlight-color-blue:#029CE1;
     --highlight-color-green:#60D701;
 }

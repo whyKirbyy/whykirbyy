@@ -1,14 +1,9 @@
 .header{
     display: flex;
     flex-direction: column;
-    padding-left: 1.5vw;
     padding-top: 1vw;
     margin-right: 5%;
     gap: 1vw;
-}
-
-.subTitle{
-    font-size: var(--font-size-default);
 }
 
 .navList {
@@ -16,11 +11,10 @@
     white-space: nowrap;
     font-size: var(--font-size-default);
     align-items: center;
-    gap: 4vw;
 
     .mainTitle{
         display: flex;
-        font-size: var(--font-size-title);
+        font-size: var(--font-size-default);
     }
 
     .navItems{
@@ -46,6 +40,13 @@
 
 .darkerFont{
     color: var(--text-color-shaded);
+}
+
+.imports{
+    font-size: var(--font-size-default);
+    display: flex;
+    flex-direction: column;
+    line-height: 2rem;
 }
 
 

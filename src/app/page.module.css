@@ -1,0 +1,39 @@
+.page{
+    display: flex;
+    flex-direction: column;
+    font-size: var(--font-size-default);
+    margin-top: 3vw;
+    align-items: center;
+    padding-right: 17vw;
+}
+
+.about{
+    display: flex;
+    flex-direction: column;
+
+    .dictSection{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .textSection{
+        display: flex;
+    }
+
+    .decorators{
+        white-space: nowrap;
+    }
+
+    .text{
+        max-width: 100%;
+        align-self: flex-start;
+    }
+}
+
+.darkerFont{
+    color: var(--text-color-shaded);
+}
+
+.hidden{
+    opacity: 0;
+}
