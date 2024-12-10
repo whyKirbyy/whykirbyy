@@ -37,3 +37,15 @@
 .hidden{
     opacity: 0;
 }
+
+.projects{
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+}
+
+.line{
+    display: flex;
+    max-width: 100%;
+    align-self: flex-start;
+}
