@@ -13,11 +13,12 @@ const Header: React.FC = () => {
                     <span>&nbsp;whyKirbyy</span>
                 </div>
                 <span className={styles.darkerFont}>from typing import Dict, Any</span>
+                <span className={styles.darkerFont}>from dataclasses import dataclass</span>
                 <span className={styles.darkerFont}>import httpx</span>
                 <span className={styles.darkerFont}><br/></span>
             </div>
             <div className={styles.navList}>
-                <span className={[styles.darkerFont].join(" ")}>NAVIGATION: Dict[str, Any] =&nbsp;</span>
+            <span className={[styles.darkerFont].join(" ")}>NAVIGATION: Dict[str, Any] =&nbsp;</span>
                 <div className={styles.navItems}>
                     <div className={styles.navItem}>
                         <span className={styles.darkerFont}>{"{"} </span>
