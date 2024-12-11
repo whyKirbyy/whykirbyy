@@ -6,6 +6,7 @@ body{
     background: var(--background-color);
     font-family: "Source Code Pro", monospace;
     padding-left: 1.5vw;
+    line-height: 2em;
 }
 
 :root {

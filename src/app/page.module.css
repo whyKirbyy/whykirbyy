@@ -33,6 +33,7 @@
 
 .darkerFont{
     color: var(--text-color-shaded);
+    white-space: nowrap;
 }
 
 .hidden{
@@ -51,7 +52,12 @@
     align-self: flex-start;
 }
 
-.link{
+.linkInternal{
     color: var(--highlight-color-green);
+    text-decoration: none;
+}
+
+.linkExternal{
+    color: var(--highlight-color-blue);
     text-decoration: none;
 }

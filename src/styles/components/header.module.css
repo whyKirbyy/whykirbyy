@@ -3,7 +3,6 @@
     flex-direction: column;
     padding-top: 1vw;
     margin-right: 5%;
-    gap: 1vw;
 }
 
 .navList {
@@ -46,7 +45,6 @@
     font-size: var(--font-size-default);
     display: flex;
     flex-direction: column;
-    line-height: 2rem;
 }
 
 
