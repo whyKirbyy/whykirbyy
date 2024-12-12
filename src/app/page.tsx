@@ -346,7 +346,165 @@ export default function Home() {
             <div><br/><br/></div>
             {/*##################################################-> Section Experience <-#############################################*/}
             <section id={"background"} className={styles.background}>
-                <span className={styles.darkerFont}>background_graph = nx.DiGraph()</span>
+                <span className={styles.darkerFont}>background_graph: nx.DiGraph = nx.DiGraph()</span>
+                {/* ----------------------------- new background ---------------------- */}
+                <span className={styles.darkerFont}>background_graph.add_node(</span>
+                <div className={styles.line}>
+                    <div
+                        className={`${styles.darkerFont} ${styles.decorators}`}>{Array(8).fill('\u00A0').join('')}"
+                    </div>
+                    <div className={styles.text}>
+                        <a className={styles.linkInternal}>Software Engineering Internship</a>
+                        <span className={[styles.darkerFont].join(" ")}>", <br/></span>
+                    </div>
+                </div>
+                <div className={styles.line}>
+                    <div
+                        className={`${styles.darkerFont} ${styles.decorators}`}>{Array(8).fill('\u00A0').join('')}role="
+                    </div>
+                    <div className={styles.text}>
+                        Software Engineering Intern
+                        <span className={[styles.darkerFont].join(" ")}>", <br/></span>
+                    </div>
+                </div>
+                <div className={styles.line}>
+                    <div
+                        className={`${styles.darkerFont} ${styles.decorators}`}>{Array(8).fill('\u00A0').join('')}organisation="
+                    </div>
+                    <div className={styles.text}>
+                        ssd.ngo
+                        <span className={[styles.darkerFont].join(" ")}>", <br/></span>
+                    </div>
+                </div>
+                <div className={styles.line}>
+                    <div
+                        className={`${styles.darkerFont} ${styles.decorators}`}>{Array(8).fill('\u00A0').join('')}time_period={"{"}
+                    </div>
+                    <span className={[styles.darkerFont].join(" ")}>"start_date":&nbsp;"</span>
+                    <div className={styles.text}>
+                        01.01.2024
+                    </div>
+                    <span className={[styles.darkerFont].join(" ")}>", "end_date":&nbsp;"</span>
+                    <div className={styles.text}>
+                        01.03.2024
+                    </div>
+                    <span className={[styles.darkerFont].join(" ")}>"{"}"}, <br/></span>
+                </div>
+                <div className={styles.line}>
+                    <div
+                        className={`${styles.darkerFont} ${styles.decorators}`}>{Array(8).fill('\u00A0').join('')}description="""
+                    </div>
+                    <div className={styles.text}>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                        invidunt ut labore et dolore magna aliquyam erat,sed diam voluptua.
+                        <span className={[styles.darkerFont].join(" ")}>""", <br/></span>
+                    </div>
+                </div>
+                <div className={styles.line}>
+                    <div
+                        className={`${styles.darkerFont} ${styles.decorators}`}>{Array(8).fill('\u00A0').join('')}tech_stack=["
+                    </div>
+                    <div className={styles.text}>Python</div>
+                    <span className={styles.darkerFont}>", " <br/></span>
+                    <div className={styles.text}>Python</div>
+                    <span className={styles.darkerFont}>", " <br/></span>
+                    <div className={styles.text}>Python</div>
+                    <span className={styles.darkerFont}>", " <br/></span>
+                    <div className={styles.text}>Python</div>
+                    <span className={[styles.darkerFont].join(" ")}>"], <br/></span>
+                </div>
+                <div className={styles.line}>
+                    <div
+                        className={`${styles.darkerFont} ${styles.decorators}`}>{Array(8).fill('\u00A0').join('')}reference=background.
+                    </div>
+                    <div className={styles.text}><a className={styles.linkInternal}>reference</a></div>
+                    <div className={styles.darkerFont}>("ssd.ngo")</div>
+                </div>
+                <span className={styles.darkerFont}>)<br/><br/></span>
+                {/* ----------------------------- new background ---------------------- */}
+                <span className={styles.darkerFont}>background_graph.add_node(</span>
+                <div className={styles.line}>
+                    <div
+                        className={`${styles.darkerFont} ${styles.decorators}`}>{Array(8).fill('\u00A0').join('')}"
+                    </div>
+                    <div className={styles.text}>
+                        <a className={styles.linkInternal}>Studies</a>
+                        <span className={[styles.darkerFont].join(" ")}>", <br/></span>
+                    </div>
+                </div>
+                <div className={styles.line}>
+                    <div
+                        className={`${styles.darkerFont} ${styles.decorators}`}>{Array(8).fill('\u00A0').join('')}university="
+                    </div>
+                    <div className={styles.text}>
+                        University of Zurich
+                        <span className={[styles.darkerFont].join(" ")}>", <br/></span>
+                    </div>
+                </div>
+                <div className={styles.line}>
+                    <div
+                        className={`${styles.darkerFont} ${styles.decorators}`}>{Array(8).fill('\u00A0').join('')}major="
+                    </div>
+                    <div className={styles.text}>
+                        Computer Science
+                        <span className={[styles.darkerFont].join(" ")}>", <br/></span>
+                    </div>
+                </div>
+                <div className={styles.line}>
+                    <div
+                        className={`${styles.darkerFont} ${styles.decorators}`}>{Array(8).fill('\u00A0').join('')}minor="
+                    </div>
+                    <div className={styles.text}>
+                        Astrophysics
+                        <span className={[styles.darkerFont].join(" ")}>", <br/></span>
+                    </div>
+                </div>
+                <div className={styles.line}>
+                    <div
+                        className={`${styles.darkerFont} ${styles.decorators}`}>{Array(8).fill('\u00A0').join('')}time_period={"{"}
+                    </div>
+                    <span className={[styles.darkerFont].join(" ")}>"start_date":&nbsp;"</span>
+                    <div className={styles.text}>
+                        01.01.2022
+                    </div>
+                    <span className={[styles.darkerFont].join(" ")}>", "end_date":&nbsp;"</span>
+                    <div className={styles.text}>
+                        01.03.2024
+                    </div>
+                    <span className={[styles.darkerFont].join(" ")}>"{"}"}, <br/></span>
+                </div>
+                <div className={styles.line}>
+                    <div
+                        className={`${styles.darkerFont} ${styles.decorators}`}>{Array(8).fill('\u00A0').join('')}description="""
+                    </div>
+                    <div className={styles.text}>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                        invidunt ut labore et dolore magna aliquyam erat,sed diam voluptua.
+                        <span className={[styles.darkerFont].join(" ")}>""", <br/></span>
+                    </div>
+                </div>
+                <div className={styles.line}>
+                    <div
+                        className={`${styles.darkerFont} ${styles.decorators}`}>{Array(8).fill('\u00A0').join('')}grades{"{"}"
+                    </div>
+                    <span className={[styles.darkerFont].join(" ")}>overall":&nbsp;<br/></span>
+                    <div className={styles.text}>
+                        5
+                    </div>
+                    <span className={[styles.darkerFont].join(" ")}>, "subject":&nbsp;<br/></span>
+                    <div className={styles.text}>
+                        5
+                    </div>
+                    <span className={[styles.darkerFont].join(" ")}>, "subject":&nbsp;<br/></span>
+                    <div className={styles.text}>
+                        5
+                    </div>
+                    <span className={[styles.darkerFont].join(" ")}>{"}"}<br/></span>
+                </div>
+                <span className={styles.darkerFont}>)</span>
+                {/* ----------------------------- backgrounds done ---------------------- */}
+                <div><br/></div>
+                <div className={styles.darkerFont}>background_graph.add_edge("Studies", "Software Engineering Intern", relationship="mandatory internship")</div>
             </section>
             <BackToTopButton/>
         </div>

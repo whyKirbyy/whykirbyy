@@ -2,6 +2,7 @@ from whyKirbyy import about, experience, projects, options, info
 import whyKirbyy
 from typing import Dict, Any, List, Union
 from dataclasses import dataclass
+import networkx as nx
 
 NAVIGATION: Dict[str, Any] = {
     "nav_options": [about, projects, experience, info],
@@ -94,3 +95,25 @@ projects_content: List[Project] = [
         status="work in progress",
     ),
 ]
+
+experience_graph = nx.DiGraph()
+
+experience_graph.add_node(
+    "software_engineer",
+    role="Software Engineer Internship",
+    organization="TechCorp Inc.",
+    time_period={"start": "2022-06", "end": "2023-12"},
+    description="Built scalable backend services.",
+    tech_stack=["Python", "Django", "PostgreSQL", "Docker"],
+)
+
+experience_graph.add_node(
+    "studies",
+    role="Student",
+    university="University of Example",
+    major="Computer Science",
+    minor="Mathematics",
+    time_period={"start": "2018-09", "end": "2022-05"},
+    description="Completed a degree in Computer Science with a focus on AI.",
+    grade_average=5,
+)
