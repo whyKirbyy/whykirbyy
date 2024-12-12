@@ -47,4 +47,15 @@
     flex-direction: column;
 }
 
+.comment{
+    display: flex;
+    white-space: nowrap;
+    font-size: var(--font-size-default);
+    align-self: flex-start;
+
+    .comment:hover{
+        color: var(--text-color);
+    }
+}
+
 

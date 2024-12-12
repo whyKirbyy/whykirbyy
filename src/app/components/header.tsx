@@ -2,23 +2,25 @@ import * as React from "react";
 import styles from "../../styles/components/header.module.css";
 
 const Header: React.FC = () => {
-    const navOptions = ["about", "projects", "experience"];
+    const navOptions = ["about", "projects", "background", "info"];
 
     return (
         <header className={styles.header}>
             <div className={styles.imports}>
-                <span className={styles.darkerFont}>from whyKirbyy import about, experience, projects, options</span>
+                <span
+                    className={styles.darkerFont}>from whyKirbyy import about, background, projects, options, info</span>
                 <div className={styles.mainTitle}>
                     <span className={styles.darkerFont}>import</span>
                     <span>&nbsp;whyKirbyy</span>
                 </div>
                 <span className={styles.darkerFont}>from typing import Dict, Any, List, Union</span>
                 <span className={styles.darkerFont}>from dataclasses import dataclass</span>
-                <span className={styles.darkerFont}>import httpx</span>
-                <span className={styles.darkerFont}><br/></span>
+                <span className={styles.darkerFont}>import networkx as nx</span>
+                <span><br/></span>
             </div>
+            {/*<span className={[styles.darkerFont, styles.comment].join(" ")}># green text means a section in the website, blue text a external link or download</span>*/}
             <div className={styles.navList}>
-            <span className={[styles.darkerFont].join(" ")}>NAVIGATION: Dict[str, Any] =&nbsp;</span>
+                <span className={[styles.darkerFont].join(" ")}>NAVIGATION: Dict[str, Any] =&nbsp;</span>
                 <div className={styles.navItems}>
                     <div className={styles.navItem}>
                         <span className={styles.darkerFont}>{"{"} </span>

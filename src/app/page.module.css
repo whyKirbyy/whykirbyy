@@ -40,7 +40,7 @@
     opacity: 0;
 }
 
-.projects{
+.projects, .background{
     display: flex;
     flex-direction: column;
     align-self: flex-start;
