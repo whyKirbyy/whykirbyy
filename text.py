@@ -96,9 +96,8 @@ projects_content: List[Project] = [
     ),
 ]
 
-experience_graph = nx.DiGraph()
-
-experience_graph.add_node(
+background_graph: nx.DiGraph = nx.DiGraph()
+background_graph.add_node(
     "software_engineer",
     role="Software Engineer Internship",
     organization="TechCorp Inc.",
@@ -107,7 +106,7 @@ experience_graph.add_node(
     tech_stack=["Python", "Django", "PostgreSQL", "Docker"],
 )
 
-experience_graph.add_node(
+background_graph.add_node(
     "studies",
     role="Student",
     university="University of Example",
@@ -117,3 +116,13 @@ experience_graph.add_node(
     description="Completed a degree in Computer Science with a focus on AI.",
     grade_average=5,
 )
+
+info_content: str = """This is text"""
+
+if __name__ == "__main__":
+    whyKirbyy.set_about(about_content)
+    whyKirbyy.set_projects(projects_content)
+    whyKirbyy.set_background(background_graph)
+    whyKirbyy.set_info(info_content)
+
+    resume = whyKirbyy.resume()
