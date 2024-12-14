@@ -1,9 +1,49 @@
 "use client"
 import styles from "./page.module.css";
-import * as React from "react";
+import React, {useEffect, useState, useRef} from "react";
 import BackToTopButton from "@/app/components/backToTopButton";
+import TerminalPopup from "@/app/components/terminalPopup";
 
 export default function Home() {
+    const [showTerminal, setShowTerminal] = useState(false)
+    const terminalRef= useRef<HTMLDivElement | null>(null);
+    const buttonRef = useRef<HTMLDivElement | null>(null);
+
+    const notShowTerminal = () => {
+        setShowTerminal(!showTerminal)
+    }
+
+    useEffect(() => {
+        if (showTerminal) {
+            document.body.style.overflow = "hidden";
+        }else {
+            document.body.style.overflow = "auto";
+        }
+
+        return () => {
+            document.body.style.overflow = 'auto';
+        };
+    }, [showTerminal]);
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (
+                terminalRef.current && !terminalRef.current.contains(event.target as Node) &&
+                buttonRef.current && !buttonRef.current.contains(event.target as Node)
+            ) {
+                setShowTerminal(false);
+            }
+        };
+
+        if (showTerminal) {
+            document.addEventListener("mousedown", handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [showTerminal]);
+
     return (
         <div className={styles.page}>
             {/*##################################################-> Section about<-#############################################*/}
@@ -604,7 +644,14 @@ export default function Home() {
                     {Array(4).fill('\u00A0').join('')}<br/>
                 </div>
             </section>
-            <BackToTopButton/>
+            {showTerminal && (
+                <div ref={terminalRef}>
+                    <TerminalPopup />
+                </div>
+            )}
+            <div ref={buttonRef}>
+                <BackToTopButton setShowTerminal={notShowTerminal}/>
+            </div>
         </div>
     );
 }

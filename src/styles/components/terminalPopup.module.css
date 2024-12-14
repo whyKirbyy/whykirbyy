@@ -1,0 +1,12 @@
+.terminal {
+    position: fixed;
+    top: 5vw;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 50%;
+    background: var(--terminal-background);
+    z-index: 1000;
+    border-radius: 1vw;
+    border: 2px var(--terminal-border) solid;
+}

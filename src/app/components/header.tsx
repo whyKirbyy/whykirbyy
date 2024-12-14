@@ -37,7 +37,7 @@ const Header: React.FC = () => {
                         <span className={[styles.key, styles.darkerFont].join(" ")}>,&nbsp;</span>
                     </div>
                     <div className={styles.navItem}>
-                        <span className={styles.darkerFont}>"language_options"</span>
+                        <span className={styles.darkerFont}>"options"</span>
                         <span className={styles.darkerFont}>:&nbsp;"</span>
                         <span className={styles.value}>options</span>
                         <span className={styles.darkerFont}>",</span>

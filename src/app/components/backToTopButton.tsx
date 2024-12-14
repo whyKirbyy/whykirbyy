@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import styles from "../../styles/components/backToTopButton.module.css";
 import Image from "next/image";
 
-const DynamicButton = () => {
+interface menuButtonProps{
+    setShowTerminal: () => void
+}
+
+const menuButton: React.FC<menuButtonProps> = ({setShowTerminal}) => {
     const [isHovered, setIsHovered] = useState(false);
 
     const scrollToTop = () => {
@@ -34,7 +38,7 @@ const DynamicButton = () => {
                     onClick={scrollToTop}
                     title="Scroll to top"
                 >
-                    <Image src="/settings.svg" alt="settings icon" width={24} height={24} />
+                    <Image src="/settings.svg" alt="settings icon" width={24} height={24} className={styles.icon} draggable="false"/>
                 </button>
             ) : (
                 <div className={styles.pillButton}>
@@ -42,18 +46,18 @@ const DynamicButton = () => {
                         className={`${styles.pillButtonSection} ${styles.copySection}`}
                         onClick={copyPageUrl}
                     >
-                        <Image src="/copy.svg" alt="copy icon" width={24} height={24} />
+                        <Image src="/copy.svg" alt="copy icon" width={24} height={24} className={styles.icon} draggable="false"/>
                     </button>
                     <button
                         className={`${styles.pillButtonSection} ${styles.topSection}`}
                         onClick={scrollToTop}
                     >
-                        <Image src="/arrow.svg" alt="arrow icon" width={24} height={24} />
+                        <Image src="/arrow.svg" alt="arrow icon" width={24} height={24} className={styles.icon} draggable="false"/>
                     </button>
                     <button
-                        className={`${styles.pillButtonSection} ${styles.arrowSection}`}
+                        className={`${styles.pillButtonSection} ${styles.arrowSection}`} onClick={setShowTerminal}
                     >
-                        <Image src="/terminal.svg" alt="terminal icon" width={24} height={24} />
+                        <Image src="/terminal.svg" alt="terminal icon" width={24} height={24} className={styles.icon} draggable="false"/>
                     </button>
                 </div>
             )}
@@ -61,4 +65,4 @@ const DynamicButton = () => {
     );
 };
 
-export default DynamicButton;
+export default menuButton;
