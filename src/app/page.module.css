@@ -5,6 +5,7 @@
     margin-top: 3vw;
     align-items: center;
     padding-right: 17vw;
+    user-select: none;
 }
 
 .about{

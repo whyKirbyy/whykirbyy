@@ -1,28 +1,24 @@
-from whyKirbyy import about, experience, projects, options, info
-import whyKirbyy
-from typing import Dict, Any, List, Union
+from whykirbyy import Whykirbyy
+from typing import Dict, List, Union
 from dataclasses import dataclass
 import networkx as nx
 
-NAVIGATION: Dict[str, Any] = {
-    "nav_options": [about, projects, experience, info],
-    "language_options": options,
-}
 
-whyKirbyy.set_name("Tim Schmid")
+NAVIGATION: Dict[str, Union[List[str], str]] = {
+    "nav_options": ["about", "projects", "experience", "info"],
+    "language_options": "options",
+}
+whykirbyy_instance = Whykirbyy("Tim Schmid")
+whykirbyy_instance.set_name()
 
 about_content: Dict[str, Union[str, List[str], Dict[str, str]]] = {
-    "tim_schmid": (
-        """
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-        voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-        amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-        nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-        sed diam voluptua.
-        """
-    ),
+    "tim_schimd": """Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+                    voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+                    clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+                    amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                    nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                    sed diam voluptua.""",
     "tech_stack": ["Python", "Java", "TypeScript", "C", "more"],
     "links": {
         "github_link": "github",
@@ -120,9 +116,9 @@ background_graph.add_node(
 info_content: str = """This is text"""
 
 if __name__ == "__main__":
-    whyKirbyy.set_about(about_content)
-    whyKirbyy.set_projects(projects_content)
-    whyKirbyy.set_background(background_graph)
-    whyKirbyy.set_info(info_content)
+    whykirbyy_instance.set_about(about_content)
+    whykirbyy_instance.set_projects(projects_content)
+    whykirbyy_instance.set_background(background_graph)
+    whykirbyy_instance.set_info(info_content)
 
-    resume = whyKirbyy.resume()
+    resume = whykirbyy_instance.resume()

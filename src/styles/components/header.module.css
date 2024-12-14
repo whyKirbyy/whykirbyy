@@ -3,21 +3,27 @@
     flex-direction: column;
     padding-top: 1vw;
     margin-right: 5%;
+    user-select: none;
+}
+
+.mainTitle{
+    font-size: var(--font-size-default);
+    color: var(--text-color);
+    display: flex;
+}
+
+.titleSection{
+    display: flex;
 }
 
 .navList {
     display: flex;
     white-space: nowrap;
     font-size: var(--font-size-default);
-    align-items: center;
-
-    .mainTitle{
-        display: flex;
-        font-size: var(--font-size-default);
-    }
 
     .navItems{
         display: flex;
+        flex-direction: column;
     }
 
     .navItem {

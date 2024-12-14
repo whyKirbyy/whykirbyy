@@ -96,7 +96,7 @@ export default function Home() {
                     <div
                         className={`${styles.darkerFont} ${styles.decorators}`}>{Array(8).fill('\u00A0').join('')}name="
                     </div>
-                    <div className={styles.text}><a className={styles.linkInternal} href="">whykirbyy website</a>
+                    <div className={styles.text}><a className={styles.linkInternal} href="">whyKirbyy website</a>
                     </div>
                     <div className={`${styles.darkerFont} ${styles.decorators}`}>",<br/></div>
                 </div>
@@ -133,8 +133,8 @@ export default function Home() {
                         className={`${styles.darkerFont} ${styles.decorators}`}>{Array(8).fill('\u00A0').join('')}links=["
                     </div>
                     <div className={styles.text}>
-                        <a className={styles.linkExternal} href="https://www.whykirbyy.ch" target="_blank"
-                           rel="noopener noreferrer">whykirbyy.ch</a>
+                        <a className={styles.linkExternal} href="https://www.whyirbyy.ch" target="_blank"
+                           rel="noopener noreferrer">whyKirbyy.ch</a>
                         <span className={[styles.darkerFont].join(" ")}>"], <br/></span>
                     </div>
                 </div>
@@ -155,7 +155,7 @@ export default function Home() {
                     <div
                         className={`${styles.darkerFont} ${styles.decorators}`}>{Array(8).fill('\u00A0').join('')}name="
                     </div>
-                    <div className={styles.text}><a className={styles.linkInternal} href="">whykirbyy package</a>
+                    <div className={styles.text}><a className={styles.linkInternal} href="">whyKirbyy package</a>
                     </div>
                     <div className={`${styles.darkerFont} ${styles.decorators}`}>",<br/></div>
                 </div>
@@ -193,7 +193,7 @@ export default function Home() {
                     </div>
                     <div className={styles.text}>
                         <a className={styles.linkExternal} href="" target="_blank"
-                           rel="noopener noreferrer">whykirbyy package github</a>
+                           rel="noopener noreferrer">whyKirbyy package github</a>
                         <span className={[styles.darkerFont].join(" ")}>"], <br/></span>
                     </div>
                 </div>
@@ -336,7 +336,60 @@ export default function Home() {
                         <span className={[styles.darkerFont].join(" ")}>", <br/></span>
                     </div>
                 </div>
-                <span className={`${styles.darkerFont} ${styles.decorators}`}>{Array(4).fill('\u00A0').join('')}),<br/></span>
+                <span className={`${styles.darkerFont} ${styles.decorators}`}>{Array(4).fill('\u00A0').join('')}),<br/><br/></span>
+                {/*-------------------New Project-------------------*/}
+                <span className={`${styles.darkerFont} ${styles.decorators}`}>{Array(4).fill('\u00A0').join('')}Project(<br/></span>
+                <div className={styles.line}>
+                    <div
+                        className={`${styles.darkerFont} ${styles.decorators}`}>{Array(8).fill('\u00A0').join('')}name="
+                    </div>
+                    <div className={styles.text}><a className={styles.linkInternal} href="">Little German Language</a>
+                    </div>
+                    <div className={`${styles.darkerFont} ${styles.decorators}`}>",<br/></div>
+                </div>
+                <div className={styles.line}>
+                    <div
+                        className={`${styles.darkerFont} ${styles.decorators}`}>{Array(8).fill('\u00A0').join('')}details="""
+                    </div>
+                    <div className={styles.text}>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                        invidunt ut labore et dolore magna aliquyam erat,sed diam voluptua. At vero eos et accusam et
+                        justo duo dolores et ea rebum.
+                        <span className={[styles.darkerFont].join(" ")}>""", <br/></span>
+                    </div>
+                </div>
+                <div className={styles.line}>
+                    <div
+                        className={`${styles.darkerFont} ${styles.decorators}`}>{Array(8).fill('\u00A0').join('')}tech_stack=["
+                    </div>
+                    <div className={styles.text}>
+                        Python
+                        <span className={styles.darkerFont}>", "</span>
+                        Assembly
+                        <span className={styles.darkerFont}>"]</span>
+                    </div>
+                </div>
+                <div className={styles.line}>
+                    <div
+                        className={`${styles.darkerFont} ${styles.decorators}`}>{Array(8).fill('\u00A0').join('')}links=["
+                    </div>
+                    <div className={styles.text}>
+                        <a className={styles.linkExternal} href="" target="_blank"
+                           rel="noopener noreferrer">github</a>
+                        <span className={[styles.darkerFont].join(" ")}>"], <br/></span>
+                    </div>
+                </div>
+                <div className={styles.line}>
+                    <div
+                        className={`${styles.darkerFont} ${styles.decorators}`}>{Array(8).fill('\u00A0').join('')}status="
+                    </div>
+                    <div className={styles.text}>
+                        completed
+                        <span className={[styles.darkerFont].join(" ")}>", <br/></span>
+                    </div>
+                </div>
+                <span
+                    className={`${styles.darkerFont} ${styles.decorators}`}>{Array(4).fill('\u00A0').join('')}),<br/></span>
 
                 <span className={`${styles.darkerFont} ${styles.decorators}`}>]</span>
             </section>
@@ -414,7 +467,7 @@ export default function Home() {
                     <div
                         className={`${styles.darkerFont} ${styles.decorators}`}>{Array(4).fill('\u00A0').join('')}reference=background.
                     </div>
-                    <div className={styles.text}><a className={styles.linkInternal}>reference</a></div>
+                    <div className={styles.text}><a className={styles.linkExternal}>reference</a></div>
                     <div className={styles.darkerFont}>("ssd.ngo")</div>
                 </div>
                 <span className={styles.darkerFont}>)<br/><br/></span>
@@ -530,22 +583,22 @@ export default function Home() {
                     if __name__ == "__main__":
                 </div>
                 <div className={[styles.line, styles.darkerFont].join(" ")}>
-                    {Array(4).fill('\u00A0').join('')}whyKirbyy.set_about(about_content)
+                    {Array(4).fill('\u00A0').join('')}whykirbyy_instance.set_about(about_content)
                 </div>
                 <div className={[styles.line, styles.darkerFont].join(" ")}>
-                    {Array(4).fill('\u00A0').join('')}whyKirbyy.set_projects(projects_content)
+                    {Array(4).fill('\u00A0').join('')}whykirbyy_instance.set_projects(projects_content)
                 </div>
                 <div className={[styles.line, styles.darkerFont].join(" ")}>
-                    {Array(4).fill('\u00A0').join('')}whyKirbyy.set_background(background_graph)
+                    {Array(4).fill('\u00A0').join('')}whykirbyy_instance.set_background(background_graph)
                 </div>
                 <div className={[styles.line, styles.darkerFont].join(" ")}>
-                    {Array(4).fill('\u00A0').join('')}whyKirbyy.set_info(info_content)
+                    {Array(4).fill('\u00A0').join('')}whykirbyy_instance.set_info(info_content)
                 </div>
                 <div className={[styles.line, styles.darkerFont].join(" ")}>
                     {Array(4).fill('\u00A0').join('')}<br/>
                 </div>
                 <div className={[styles.line, styles.darkerFont].join(" ")}>
-                    {Array(4).fill('\u00A0').join('')}resume = whyKirbyy.resume()
+                    {Array(4).fill('\u00A0').join('')}resume = whykirbyy_instance.resume()
                 </div>
                 <div className={[styles.line, styles.darkerFont].join(" ")}>
                     {Array(4).fill('\u00A0').join('')}<br/>
