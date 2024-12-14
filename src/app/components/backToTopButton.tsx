@@ -46,18 +46,18 @@ const menuButton: React.FC<menuButtonProps> = ({setShowTerminal}) => {
                         className={`${styles.pillButtonSection} ${styles.copySection}`}
                         onClick={copyPageUrl}
                     >
-                        <Image src="/copy.svg" alt="copy icon" width={24} height={24} className={styles.icon} draggable="false"/>
+                        <Image src="/copy.svg" alt="copy icon" width={24} height={24} className={styles.icon} draggable={false} priority={true}/>
                     </button>
                     <button
                         className={`${styles.pillButtonSection} ${styles.topSection}`}
                         onClick={scrollToTop}
                     >
-                        <Image src="/arrow.svg" alt="arrow icon" width={24} height={24} className={styles.icon} draggable="false"/>
+                        <Image src="/arrow.svg" alt="arrow icon" width={24} height={24} className={styles.icon} draggable={false} priority={true}/>
                     </button>
                     <button
                         className={`${styles.pillButtonSection} ${styles.arrowSection}`} onClick={setShowTerminal}
                     >
-                        <Image src="/terminal.svg" alt="terminal icon" width={24} height={24} className={styles.icon} draggable="false"/>
+                        <Image src="/terminal.svg" alt="terminal icon" width={24} height={24} className={styles.icon} draggable={false} priority={true}/>
                     </button>
                 </div>
             )}
