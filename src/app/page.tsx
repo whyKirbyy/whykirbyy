@@ -465,10 +465,10 @@ export default function Home() {
                 </div>
                 <div className={styles.line}>
                     <div
-                        className={`${styles.darkerFont} ${styles.decorators}`}>{Array(4).fill('\u00A0').join('')}reference=background.
+                        className={`${styles.darkerFont} ${styles.decorators}`}>{Array(4).fill('\u00A0').join('')}reference="
                     </div>
                     <div className={styles.text}><a className={styles.linkExternal}>reference</a></div>
-                    <div className={styles.darkerFont}>("ssd.ngo")</div>
+                    <div className={styles.darkerFont}>",</div>
                 </div>
                 <span className={styles.darkerFont}>)<br/><br/></span>
                 {/* ----------------------------- new background ---------------------- */}

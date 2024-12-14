@@ -1,7 +1,11 @@
-.backToTopButton {
+.buttonContainer {
     position: fixed;
     bottom: 1vw;
     right: 1vw;
+    z-index: 50;
+}
+
+.backToTopButton {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -9,16 +13,58 @@
     background-color: var(--text-color);
     border-radius: 50%;
     cursor: pointer;
-    z-index: 50;
     border: none;
     overflow: hidden;
-    width: 2.25vw;
-    height: 2.25vw;
-    font-size: 1.25vw;
+    width: 2.5vw;
+    height: 2.5vw;
+    font-size: 1.125vw;
     text-align: center;
     font-family: var(--font-arrow), monospace;
+    color: rgba(0, 0, 0, 0.63);
+    transition: width 3s ease, border-radius 3s ease;
 }
 
 .backToTopButton:hover {
-    transform: scale(1.1);
+    width: 10vw;
+    border-radius: 100px;
+    height: 2.25vw;
+}
+
+.pillButton {
+    display: flex;
+    align-items: center;
+    background-color: var(--text-color);
+    border-radius: 100px;
+    overflow: hidden;
+    font-family: var(--font-family), monospace;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.pillButtonSection {
+    background: none;
+    border: none;
+    color: rgba(0, 0, 0, 0.63);
+    padding: 0.5vw 1vw;
+    cursor: pointer;
+}
+
+.copySection {
+    border-right: 1px solid var(--text-color-shaded);
+}
+
+.topSection{
+    font-family: var(--font-arrow) monospace;
+}
+
+.arrowSection {
+    border-left: 1px solid var(--text-color-shaded);
+}
+
+.pillButtonSection:hover {
+    background-color: rgba(0, 0, 0, 0.16);
+    color: rgba(0, 0, 0, 0.63);
+}
+
+.topSection:active .copySection:active .arrowSection:active{
+    color: var(--highlight-color-blue);
 }

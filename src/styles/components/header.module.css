@@ -18,16 +18,17 @@
 
 .navList {
     display: flex;
+    flex-direction: column;
     white-space: nowrap;
     font-size: var(--font-size-default);
 
     .navItems{
         display: flex;
-        flex-direction: column;
     }
 
     .navItem {
         display: flex;
+        align-self: flex-start;
 
         .value {
             text-decoration: none;

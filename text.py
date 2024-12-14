@@ -8,6 +8,7 @@ NAVIGATION: Dict[str, Union[List[str], str]] = {
     "nav_options": ["about", "projects", "experience", "info"],
     "language_options": "options",
 }
+
 whykirbyy_instance = Whykirbyy("Tim Schmid")
 whykirbyy_instance.set_name()
 
@@ -100,6 +101,7 @@ background_graph.add_node(
     time_period={"start": "2022-06", "end": "2023-12"},
     description="Built scalable backend services.",
     tech_stack=["Python", "Django", "PostgreSQL", "Docker"],
+    reference="reference",
 )
 
 background_graph.add_node(
@@ -111,9 +113,16 @@ background_graph.add_node(
     time_period={"start": "2018-09", "end": "2022-05"},
     description="Completed a degree in Computer Science with a focus on AI.",
     grade_average=5,
+    transcript_of_records="transcript of records",
 )
 
-info_content: str = """This is text"""
+info_content: str = """Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+                    voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+                    clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+                    amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                    nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                    sed diam voluptua."""
 
 if __name__ == "__main__":
     whykirbyy_instance.set_about(about_content)

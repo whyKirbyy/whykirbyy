@@ -15,11 +15,11 @@ const Header: React.FC = () => {
             </div>
             {/*<span className={[styles.darkerFont, styles.comment].join(" ")}># green text means a section in the website, blue text a external link or download</span>*/}
             <div className={styles.navList}>
-                <span className={[styles.darkerFont].join(" ")}>NAVIGATION: Dict[str, Union[List[str], str]] =&nbsp;</span>
+                <span
+                    className={[styles.darkerFont].join(" ")}>NAVIGATION: Dict[str, Union[List[str], str]] =&nbsp;{"{"}</span>
                 <div className={styles.navItems}>
                     <div className={styles.navItem}>
-                        <span className={styles.darkerFont}>{"{"} </span>
-                        <span className={styles.darkerFont}>"nav_options"</span>
+                        <span className={styles.darkerFont}>{Array(4).fill('\u00A0').join('')}"nav_options"</span>
                         <span className={styles.darkerFont}>:&nbsp;</span>
                         <span className={[styles.brackets, styles.darkerFont].join(" ")}>[</span>
                         {navOptions.map((option, index) => (
@@ -37,15 +37,16 @@ const Header: React.FC = () => {
                         <span className={[styles.key, styles.darkerFont].join(" ")}>,&nbsp;</span>
                     </div>
                     <div className={styles.navItem}>
-                        <span className={styles.darkerFont}>&nbsp;"language_options"</span>
+                        <span className={styles.darkerFont}>"language_options"</span>
                         <span className={styles.darkerFont}>:&nbsp;"</span>
                         <span className={styles.value}>options</span>
-                        <span className={styles.darkerFont}>"{"}"}</span>
+                        <span className={styles.darkerFont}>",</span>
                     </div>
                 </div>
+                <span className={styles.darkerFont}>{"}"}<br/><br/></span>
             </div>
             <div className={styles.imports}>
-                <span className={[styles.subTitle, styles.darkerFont].join(" ")}>whykirbyy_instance = Whykirbyy()</span>
+            <span className={[styles.subTitle, styles.darkerFont].join(" ")}>whykirbyy_instance = Whykirbyy()</span>
                 <div>
                     <span className={[styles.subTitle, styles.darkerFont].join(" ")}>whykirbyy_instance.set_name(</span>
                     <span className={[styles.subTitle, styles.darkerFont].join(" ")}>"</span>
