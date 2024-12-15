@@ -10,8 +10,8 @@ export default function Home() {
     const buttonRef = useRef<HTMLDivElement | null>(null);
 
     const notShowTerminal = () => {
-        setShowTerminal(!showTerminal)
-    }
+        setShowTerminal((prev) => !prev);
+    };
 
     useEffect(() => {
         if (showTerminal) {
@@ -41,6 +41,24 @@ export default function Home() {
 
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [showTerminal]);
+
+    useEffect(() => {
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if ((event.metaKey || event.ctrlKey) && event.key === "j") {
+                setShowTerminal((prev) => !prev);
+            }
+
+            if (event.key === "Escape" && showTerminal) {
+                setShowTerminal(false);
+            }
+        };
+
+        window.addEventListener("keydown", handleKeyDown);
+
+        return () => {
+            window.removeEventListener("keydown", handleKeyDown);
         };
     }, [showTerminal]);
 
