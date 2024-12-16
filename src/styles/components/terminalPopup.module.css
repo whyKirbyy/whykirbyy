@@ -1,17 +1,19 @@
 .terminal {
     position: fixed;
     display: flex;
+    flex-direction: column;
     top: 5vw;
     left: 50%;
     transform: translateX(-50%);
     width: 50%;
     height: 40%;
+    max-height: 60%;
     background: var(--terminal-background);
     z-index: 1000;
     border-radius: 1vw;
     border: 1px var(--terminal-border) solid;
-    justify-content: center;
     padding-top: 1vw;
+    font-family: var(--font-terminal), monospace;
 }
 
 .searchbar{
@@ -24,8 +26,13 @@
     color: var(--text-color);
     outline: none;
     caret-color: var(--text-color);
+    align-self: center;
 }
 
 .searchbar::placeholder {
     opacity: 0.8;
+}
+
+.suggested{
+    padding-left: 2.5%;
 }
