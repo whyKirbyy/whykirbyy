@@ -21,6 +21,7 @@ body{
     --background-color: #012B36;
     --terminal-background: #173F48;
     --terminal-border: #2E5159;
+    --terminal-button-border: #9EADAE;
     --text-color: #dddddd;
     --text-color-shaded: rgba(63, 91, 99, 0.9);
     --highlight-color-blue:#029CE1;

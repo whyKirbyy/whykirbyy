@@ -46,7 +46,11 @@ export default function Home() {
 
     useEffect(() => {
         const handleKeyDown = (event: KeyboardEvent) => {
-            if ((event.metaKey || event.ctrlKey) && event.key === "j") {
+            if ((event.metaKey || event.ctrlKey) && event.key === "h") {
+                setShowTerminal((prev) => !prev);
+            }
+
+            if ((event.metaKey || event.ctrlKey) && event.key === "H") {
                 setShowTerminal((prev) => !prev);
             }
 
@@ -664,7 +668,7 @@ export default function Home() {
             </section>
             {showTerminal && (
                 <div ref={terminalRef}>
-                    <TerminalPopup />
+                    <TerminalPopup showTerminal={notShowTerminal} />
                 </div>
             )}
             <div ref={buttonRef}>

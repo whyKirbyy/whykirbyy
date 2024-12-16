@@ -7,6 +7,7 @@
     transform: translateX(-50%);
     width: 50%;
     height: 40%;
+    overflow-y: scroll;
     max-height: 60%;
     background: var(--terminal-background);
     z-index: 1000;
@@ -33,6 +34,85 @@
     opacity: 0.8;
 }
 
-.suggested{
+.terminalItems{
+    padding-top: 1.5vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vw;
+}
+
+.commands{
+    padding-top: 1.5vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.commandItems{
+    width: 100%;
+    padding: 0.5vw 0 0.5vw;
+}
+
+.commandItems:hover{
+    background: rgba(2, 156, 225, 0.40);
+    cursor: pointer;
+}
+
+.commandText{
+    padding-left: 2.5%;
+}
+
+.actionButtons{
+    display: flex;
+    gap: 0.75vw;
+    padding-left: 2.5%;
+
+    .terminalButton{
+        background: var(--terminal-background);
+        border-radius: 25px;
+        padding: 0.75vw;
+        border: 1px var(--terminal-button-border) solid;
+        color: var(--text-color);
+        cursor: pointer;
+    }
+
+    .terminalButton:hover{
+        background: #12343c;
+    }
+
+    .terminalButton:active{
+        background: #0f2c32;
+    }
+}
+
+.suggestedItems{
+    display: flex;
+    flex-direction: column;
+}
+
+.suggestion{
+    display: flex;
+    gap: 1vw;
+    width: 100%;
+    padding: 0.5vw 0 0.5vw;
+
+    .icon{
+        display: flex;
+        align-self: center;
+        justify-self: center;
+    }
+
+    .suggestionText{
+        display: flex;
+        gap: 1vw;
+        padding-left: 2.5%;
+    }
+
+}
+
+.suggestion:hover{
+    background: rgba(2, 156, 225, 0.40);
+}
+
+.suggestionTitle{
     padding-left: 2.5%;
 }
