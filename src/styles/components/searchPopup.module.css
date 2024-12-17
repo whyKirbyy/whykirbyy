@@ -111,6 +111,7 @@
 
 .suggestion:hover{
     background: rgba(2, 156, 225, 0.40);
+    cursor: pointer;
 }
 
 .suggestionTitle{

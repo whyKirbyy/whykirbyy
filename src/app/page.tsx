@@ -2,7 +2,7 @@
 import styles from "./page.module.css";
 import React, {useEffect, useState, useRef} from "react";
 import BackToTopButton from "@/app/components/backToTopButton";
-import TerminalPopup from "@/app/components/terminalPopup";
+import SearchPopup from "@/app/components/searchPopup";
 
 export default function Home() {
     const [showTerminal, setShowTerminal] = useState(false)
@@ -668,7 +668,7 @@ export default function Home() {
             </section>
             {showTerminal && (
                 <div ref={terminalRef}>
-                    <TerminalPopup showTerminal={notShowTerminal} />
+                    <SearchPopup showTerminal={notShowTerminal} />
                 </div>
             )}
             <div ref={buttonRef}>

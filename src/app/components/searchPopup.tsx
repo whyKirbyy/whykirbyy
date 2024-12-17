@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import { matchSorter } from "match-sorter";
-import styles from "../../styles/components/terminalPopup.module.css";
+import styles from "../../styles/components/searchPopup.module.css";
 import Image from "next/image";
 
 const commands = [
@@ -18,7 +18,7 @@ interface TerminalPopupProps{
     showTerminal: () => void
 }
 
-const TerminalPopup: React.FC<TerminalPopupProps> = ({showTerminal}) => {
+const SearchPopup: React.FC<TerminalPopupProps> = ({showTerminal}) => {
     const inputRef = useRef<HTMLInputElement>(null);
 
     const [inputValue, setInputValue] = useState("");
@@ -38,6 +38,10 @@ const TerminalPopup: React.FC<TerminalPopupProps> = ({showTerminal}) => {
     }, [inputValue]);
 
     const copyCode = () => {
+        showTerminal()
+    }
+
+    const doThing = () => {
         showTerminal()
     }
 
@@ -62,14 +66,14 @@ const TerminalPopup: React.FC<TerminalPopupProps> = ({showTerminal}) => {
                     <div className={styles.terminalItems}>
                         <div className={styles.actionButtons}>
                             <button className={styles.terminalButton} onClick={copyCode}>copy code</button>
-                            <button className={styles.terminalButton}>download file</button>
-                            <button className={styles.terminalButton}>change language</button>
+                            <button className={styles.terminalButton} onClick={doThing}>download file</button>
+                            <button className={styles.terminalButton} onClick={doThing}>change language</button>
                         </div>
                         <div className={styles.suggestedCommands}>
                             <span className={styles.suggestionTitle}>Suggested</span>
                             <div className={styles.suggestedItems}>
-                                <div className={styles.suggestion}><span className={styles.suggestionText}><Image src={"/settings2.svg"} alt={"settings icon"} width={20} height={20} className={styles.icon} draggable={false} priority={true}/> Open Theme Picker</span></div>
-                                <div className={styles.suggestion}><span className={styles.suggestionText}><Image src={"/python.svg"} alt={"python logo"} width={20} height={20} className={styles.icon} draggable={false} priority={true}/> Checkout whykirbyy PyPi</span></div>
+                                <div className={styles.suggestion} onClick={doThing}><span className={styles.suggestionText}><Image src={"/settings2.svg"} alt={"settings icon"} width={20} height={20} className={styles.icon} draggable={false} priority={true}/> Open Theme Picker</span></div>
+                                <div className={styles.suggestion} onClick={doThing}><span className={styles.suggestionText}><Image src={"/python.svg"} alt={"python logo"} width={20} height={20} className={styles.icon} draggable={false} priority={true}/> Checkout whykirbyy PyPi</span></div>
                             </div>
                         </div>
                     </div>
@@ -85,4 +89,4 @@ const TerminalPopup: React.FC<TerminalPopupProps> = ({showTerminal}) => {
     );
 };
 
-export default TerminalPopup;
+export default SearchPopup;
