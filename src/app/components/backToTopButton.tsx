@@ -3,10 +3,13 @@ import styles from "../../styles/components/backToTopButton.module.css";
 import Image from "next/image";
 
 interface menuButtonProps{
+    setShowSearch: () => void
     setShowTerminal: () => void
+    isTerminalToggled: boolean
+    isTerminalHidden: boolean
 }
 
-const menuButton: React.FC<menuButtonProps> = ({setShowTerminal}) => {
+const menuButton: React.FC<menuButtonProps> = ({setShowSearch, isTerminalToggled, isTerminalHidden, setShowTerminal}) => {
     const [isHovered, setIsHovered] = useState(false);
 
     const scrollToTop = () => {
@@ -28,7 +31,7 @@ const menuButton: React.FC<menuButtonProps> = ({setShowTerminal}) => {
 
     return (
         <div
-            className={styles.buttonContainer}
+            className={`${styles.buttonContainer} ${isTerminalToggled ? styles.terminalIsExpanded : ""} ${isTerminalHidden ? styles.terminalIsHidden : ""}`}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
@@ -44,7 +47,7 @@ const menuButton: React.FC<menuButtonProps> = ({setShowTerminal}) => {
                 <div className={styles.pillButton}>
                     <button
                         className={`${styles.pillButtonSection} ${styles.copySection}`}
-                        onClick={copyPageUrl}
+                        onClick={setShowTerminal}
                     >
                         <Image src="/terminal.svg" alt="terminal icon" width={24} height={24} className={styles.icon} draggable={false} priority={true}/>
                     </button>
@@ -55,7 +58,7 @@ const menuButton: React.FC<menuButtonProps> = ({setShowTerminal}) => {
                         <Image src="/arrow.svg" alt="arrow icon" width={24} height={24} className={styles.icon} draggable={false} priority={true}/>
                     </button>
                     <button
-                        className={`${styles.pillButtonSection} ${styles.arrowSection}`} onClick={setShowTerminal}
+                        className={`${styles.pillButtonSection} ${styles.arrowSection}`} onClick={setShowSearch}
                     >
                         <Image src="/search.svg" alt="search commands icon" width={24} height={24} className={styles.icon} draggable={false} priority={true}/>
                     </button>
