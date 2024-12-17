@@ -41,7 +41,7 @@
     opacity: 0;
 }
 
-.projects, .background, .info{
+.projects, .background, .info, .contact{
     display: flex;
     flex-direction: column;
     align-self: flex-start;

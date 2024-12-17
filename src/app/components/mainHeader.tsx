@@ -2,7 +2,7 @@ import * as React from "react";
 import styles from "../../styles/components/mainHeader.module.css";
 
 const MainHeader: React.FC = () => {
-    const navOptions = ["about", "projects", "background", "info"];
+    const navOptions = ["about", "projects", "background", "info", "contact"];
 
     return (
         <header className={styles.header}>

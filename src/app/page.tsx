@@ -130,11 +130,15 @@ export default function Home() {
                                 <span className={[styles.darkerFont].join(" ")}>{"{"}</span>
                                 <span className={styles.text}>
                                     <span className={styles.darkerFont}>"github_link":&nbsp;</span>
-                                    <span className={styles.darkerFont}>"</span><a href={"https://github.com/whyKirbyy"} className={styles.linkExternal}>github</a><span className={styles.darkerFont}>",&nbsp;</span>
+                                    <span className={styles.darkerFont}>"</span><a href={"https://github.com/whyKirbyy"}
+                                                                                   className={styles.linkExternal}>github</a><span
+                                    className={styles.darkerFont}>",&nbsp;</span>
                                 </span>
                                 <span className={styles.text}>
                                     <span className={styles.darkerFont}>"resume_download":&nbsp;</span>
-                                    <span className={styles.darkerFont}>"</span><a href={"/resume.pdf"} download={"resume_Tim_Schmid.pdf"} className={styles.linkExternal}>resume</a><span
+                                    <span className={styles.darkerFont}>"</span><a href={"/resume.pdf"}
+                                                                                   download={"resume_Tim_Schmid.pdf"}
+                                                                                   className={styles.linkExternal}>resume</a><span
                                     className={styles.darkerFont}>",&nbsp;</span>
                                 </span>
                                 <span className={[styles.darkerFont].join(" ")}>{"}"},</span>
@@ -402,7 +406,8 @@ export default function Home() {
                         <span className={[styles.darkerFont].join(" ")}>", <br/></span>
                     </div>
                 </div>
-                <span className={`${styles.darkerFont} ${styles.decorators}`}>{Array(4).fill('\u00A0').join('')}),<br/><br/></span>
+                <span
+                    className={`${styles.darkerFont} ${styles.decorators}`}>{Array(4).fill('\u00A0').join('')}),<br/><br/></span>
                 {/*-------------------New Project-------------------*/}
                 <span className={`${styles.darkerFont} ${styles.decorators}`}>{Array(4).fill('\u00A0').join('')}Project(<br/></span>
                 <div className={styles.line}>
@@ -619,7 +624,9 @@ export default function Home() {
                 </div>
                 <div className={styles.line}>
                     <span className={styles.darkerFont}>{Array(4).fill('\u00A0').join('')}transcript_of_records="</span>
-                    <span className={styles.text}><a href={"/transcript_of_records.pdf"} download={"records_Tim_Schmid.pdf"} className={styles.linkExternal}>transcript of records</a></span>
+                    <span className={styles.text}><a href={"/transcript_of_records.pdf"}
+                                                     download={"records_Tim_Schmid.pdf"}
+                                                     className={styles.linkExternal}>transcript of records</a></span>
                     <span className={styles.darkerFont}>",</span>
                 </div>
                 <span className={styles.darkerFont}>)</span>
@@ -640,6 +647,13 @@ export default function Home() {
                         consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
                         <span className={[styles.darkerFont].join(" ")}>"""<br/></span>
                     </span>
+                </div>
+            </section>
+            <div><br/><br/></div>
+            <section id={"contact"} className={styles.contact}>
+                <div className={styles.line}>
+                    <div className={styles.darkerFont}># write me an</div>
+                    <div>&nbsp;email: whykirbyy@whykirbyy.ch</div>
                 </div>
             </section>
             <div><br/><br/></div>
@@ -672,7 +686,7 @@ export default function Home() {
             </section>
             {showTerminal && (
                 <div ref={terminalRef}>
-                    <SearchPopup showTerminal={notShowTerminal} />
+                    <SearchPopup showTerminal={notShowTerminal}/>
                 </div>
             )}
             <div ref={buttonRef}>
