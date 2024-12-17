@@ -1,7 +1,7 @@
 import * as React from "react";
-import styles from "../../styles/components/header.module.css";
+import styles from "../../styles/components/mainHeader.module.css";
 
-const Header: React.FC = () => {
+const MainHeader: React.FC = () => {
     const navOptions = ["about", "projects", "background", "info"];
 
     return (
@@ -58,4 +58,4 @@ const Header: React.FC = () => {
     );
 };
 
-export default Header;
+export default MainHeader;

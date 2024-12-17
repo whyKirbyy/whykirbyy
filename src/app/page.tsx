@@ -1,6 +1,8 @@
 "use client"
-import styles from "./page.module.css";
+
 import React, {useEffect, useState, useRef} from "react";
+import Link from "next/link";
+import styles from "./page.module.css";
 import BackToTopButton from "@/app/components/backToTopButton";
 import SearchPopup from "@/app/components/searchPopup";
 
@@ -109,7 +111,9 @@ export default function Home() {
                                     C
                                     <span className={styles.darkerFont}>",&nbsp;</span>
                                     <span className={styles.darkerFont}>"</span>
-                                    <a className={styles.linkInternal}>more</a>
+                                    <Link className={styles.linkInternal} href="/about-languages/">
+                                      <span>details</span>
+                                    </Link>
                                     <span className={styles.darkerFont}>"</span>
                                 </span>
                                 <span className={[styles.darkerFont].join(" ")}>],</span>

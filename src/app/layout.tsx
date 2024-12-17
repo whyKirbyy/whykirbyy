@@ -1,14 +1,20 @@
+"use client"
 import React from "react";
-import type { Metadata } from "next";
+import {usePathname} from "next/navigation";
 import "./globals.css";
-import Header from "./components/header"
-
-export const metadata: Metadata = {
-  title: "whyKirbyy",
-  description: "The site of whyKirbyy",
-};
+import MainHeader from "./components/mainHeader"
+import AboutLanguagesHeader from "@/app/components/aboutLanguagesHeader";
 
 export default function RootLayout({children,}: Readonly<{children: React.ReactNode; }>) {
+    const pathname = usePathname()
+
+    const headerChoice= () => {
+        if (pathname === "/about-languages"){
+            return <AboutLanguagesHeader />
+        }
+
+        return <MainHeader />
+    }
     return (
         <html lang="en">
         <head>
@@ -16,7 +22,7 @@ export default function RootLayout({children,}: Readonly<{children: React.ReactN
             <link rel="icon" href="/favicon.png" title={"favicon"}/>
         </head>
         <body>
-        <Header/>
+        {headerChoice()}
         {children}
             </body>
         </html>
