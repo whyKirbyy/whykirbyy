@@ -1,4 +1,4 @@
-.terminal {
+.search{
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -15,6 +15,11 @@
     border: 1px var(--terminal-border) solid;
     padding-top: 1vw;
     font-family: var(--font-terminal), monospace;
+    scrollbar-width: none;
+}
+
+.search::-webkit-scrollbar {
+    display: none;
 }
 
 .searchbar{
@@ -34,7 +39,7 @@
     opacity: 0.8;
 }
 
-.terminalItems{
+.searchItems{
     padding-top: 1.5vw;
     display: flex;
     flex-direction: column;
@@ -66,7 +71,7 @@
     gap: 0.75vw;
     padding-left: 2.5%;
 
-    .terminalButton{
+    .searchButton{
         background: var(--terminal-background);
         border-radius: 25px;
         padding: 0.75vw;
@@ -75,11 +80,11 @@
         cursor: pointer;
     }
 
-    .terminalButton:hover{
+    .searchButton:hover{
         background: #12343c;
     }
 
-    .terminalButton:active{
+    .searchButton:active{
         background: #0f2c32;
     }
 }

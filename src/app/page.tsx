@@ -1,6 +1,6 @@
 "use client"
 
-import React, {useEffect, useState, useRef, use} from "react";
+import React, {useEffect, useState, useRef} from "react";
 import Link from "next/link";
 import styles from "./page.module.css";
 import BackToTopButton from "@/app/components/backToTopButton";
@@ -178,7 +178,7 @@ export default function Home() {
                         <div
                             className={`${styles.darkerFont} ${styles.decorators}`}>{Array(8).fill('\u00A0').join('')}name="
                         </div>
-                        <div className={styles.text}><a className={styles.linkInternal} href="">whyKirbyy website</a>
+                        <div className={styles.text}><Link className={styles.linkInternal} href="/about-project?project=whyKirbyy-website">whyKirbyy website</Link>
                         </div>
                         <div className={`${styles.darkerFont} ${styles.decorators}`}>",<br/></div>
                     </div>
@@ -237,7 +237,7 @@ export default function Home() {
                         <div
                             className={`${styles.darkerFont} ${styles.decorators}`}>{Array(8).fill('\u00A0').join('')}name="
                         </div>
-                        <div className={styles.text}><a className={styles.linkInternal} href="">whyKirbyy package</a>
+                        <div className={styles.text}><Link className={styles.linkInternal} href="/about-project?project=whyKirbyy-package">whyKirbyy package</Link>
                         </div>
                         <div className={`${styles.darkerFont} ${styles.decorators}`}>",<br/></div>
                     </div>
@@ -296,7 +296,7 @@ export default function Home() {
                         <div
                             className={`${styles.darkerFont} ${styles.decorators}`}>{Array(8).fill('\u00A0').join('')}name="
                         </div>
-                        <div className={styles.text}><a className={styles.linkInternal} href="">nudelsoup</a>
+                        <div className={styles.text}><Link className={styles.linkInternal} href="/about-project?project=nudelsoup">nudelsoup</Link>
                         </div>
                         <div className={`${styles.darkerFont} ${styles.decorators}`}>",<br/></div>
                     </div>
@@ -361,7 +361,7 @@ export default function Home() {
                         <div
                             className={`${styles.darkerFont} ${styles.decorators}`}>{Array(8).fill('\u00A0').join('')}name="
                         </div>
-                        <div className={styles.text}><a className={styles.linkInternal} href="">sundtrack</a>
+                        <div className={styles.text}><Link className={styles.linkInternal} href="/about-project?project=sundtrack">sundtrack</Link>
                         </div>
                         <div className={`${styles.darkerFont} ${styles.decorators}`}>",<br/></div>
                     </div>
@@ -426,7 +426,7 @@ export default function Home() {
                         <div
                             className={`${styles.darkerFont} ${styles.decorators}`}>{Array(8).fill('\u00A0').join('')}name="
                         </div>
-                        <div className={styles.text}><a className={styles.linkInternal} href="">Little German Language</a>
+                        <div className={styles.text}><Link className={styles.linkInternal} href="/about-project?project=lgl">Little German Language</Link>
                         </div>
                         <div className={`${styles.darkerFont} ${styles.decorators}`}>",<br/></div>
                     </div>
@@ -477,7 +477,7 @@ export default function Home() {
                     <span className={`${styles.darkerFont} ${styles.decorators}`}>]</span>
                 </section>
                 <div><br/><br/></div>
-                {/*##################################################-> Section Experience <-#############################################*/}
+                {/*##################################################-> Section Background <-#############################################*/}
                 <section id={"background"} className={styles.background}>
                     <span className={styles.darkerFont}>background_graph: nx.DiGraph = nx.DiGraph()</span>
                     {/* ----------------------------- new background ---------------------- */}
@@ -487,7 +487,7 @@ export default function Home() {
                             className={`${styles.darkerFont} ${styles.decorators}`}>{Array(4).fill('\u00A0').join('')}"
                         </div>
                         <div className={styles.text}>
-                            <a className={styles.linkInternal}>Software Engineering Internship</a>
+                            <Link href={"/about-background?background=ssd"} className={styles.linkInternal}>Software Engineering Internship</Link>
                             <span className={[styles.darkerFont].join(" ")}>", <br/></span>
                         </div>
                     </div>
@@ -561,7 +561,7 @@ export default function Home() {
                             className={`${styles.darkerFont} ${styles.decorators}`}>{Array(4).fill('\u00A0').join('')}"
                         </div>
                         <div className={styles.text}>
-                            <a className={styles.linkInternal}>Studies</a>
+                            <Link href={"/about-background?background=studies"} className={styles.linkInternal}>Studies</Link>
                             <span className={[styles.darkerFont].join(" ")}>", <br/></span>
                         </div>
                     </div>

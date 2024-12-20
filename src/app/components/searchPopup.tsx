@@ -50,7 +50,7 @@ const SearchPopup: React.FC<TerminalPopupProps> = ({showTerminal}) => {
     }
 
     return (
-        <div className={styles.terminal}>
+        <div className={styles.search}>
             <input
                 type="text"
                 name="search"
@@ -63,11 +63,11 @@ const SearchPopup: React.FC<TerminalPopupProps> = ({showTerminal}) => {
             />
             <div className={styles.suggested}>
                 {inputValue.trim() === "" ? (
-                    <div className={styles.terminalItems}>
+                    <div className={styles.searchItems}>
                         <div className={styles.actionButtons}>
-                            <button className={styles.terminalButton} onClick={copyCode}>copy code</button>
-                            <button className={styles.terminalButton} onClick={doThing}>download file</button>
-                            <button className={styles.terminalButton} onClick={doThing}>change language</button>
+                            <button className={styles.searchButton} onClick={copyCode}>copy code</button>
+                            <button className={styles.searchButton} onClick={doThing}>download file</button>
+                            <button className={styles.searchButton} onClick={doThing}>change language</button>
                         </div>
                         <div className={styles.suggestedCommands}>
                             <span className={styles.suggestionTitle}>Suggested</span>
