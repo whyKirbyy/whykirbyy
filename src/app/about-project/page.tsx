@@ -1,31 +1,40 @@
-"use client"
-import React from "react";
-import styles from "./page.module.css"
-import {useSearchParams, redirect} from "next/navigation";
+"use client";
+
+import React, { Suspense } from "react";
+import styles from "./page.module.css";
+import { useSearchParams, redirect } from "next/navigation";
+
+function ProjectContent() {
+    const searchParams = useSearchParams();
+    const project = searchParams?.get("project");
+
+    if (!project) {
+        redirect("/");
+        return null;
+    }
+
+    switch (project.toString()) {
+        case "whyKirbyy-website":
+            return <div className={styles.page}>whyKirbyy-website</div>;
+        case "whyKirbyy-package":
+            return <div className={styles.page}>whyKirbyy-package</div>;
+        case "sundtrack":
+            return <div className={styles.page}>sundtrack</div>;
+        case "nudelsoup":
+            return <div className={styles.page}>nudelsoup</div>;
+        case "lgl":
+            return <div className={styles.page}>lgl</div>;
+        default:
+            return (
+                <div className={styles.page}>page for: {project} does not exist</div>
+            );
+    }
+}
 
 export default function Page() {
-    let project
-    const parameter = useSearchParams()
-
-    if (!parameter){
-        redirect("/")
-    }else{
-        project = parameter.get("project")
-    }
-
-    if (!project){
-        redirect("/")
-    } else if (project.toString() === "whyKirbyy-website"){
-        return <div className={styles.page}>whyKirbyy-website</div>
-    } else if (project.toString() === "whyKirbyy-package"){
-        return <div className={styles.page}>whyKirbyy-package</div>
-    }else if (project.toString() === "sundtrack"){
-        return <div className={styles.page}>sundtrack</div>
-    }else if (project.toString() === "nudelsoup"){
-        return <div className={styles.page}>nudelsoup</div>
-    }else if (project.toString() === "lgl"){
-        return <div className={styles.page}>lgl</div>
-    } else{
-        return <div className={styles.page}>page for: {project} does not exist</div>
-    }
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <ProjectContent />
+        </Suspense>
+    );
 }
