@@ -20,7 +20,7 @@ export default function RootLayout({children,}: Readonly<{children: React.ReactN
         } else if (pathname.search("/about-background") !== -1) {
             return <AboutBackgroundHeader />
         }
-        return <MainHeader />;
+        return <div></div>;
     };
 
     return (
