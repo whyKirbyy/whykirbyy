@@ -1,5 +1,5 @@
 import * as React from "react";
-import styles from "../../styles/components/mainHeader.module.css";
+import styles from "../../../styles/components/headers/mainHeader.module.css";
 
 const MainHeader: React.FC = () => {
     const navOptions = ["about", "projects", "background", "info", "contact"];

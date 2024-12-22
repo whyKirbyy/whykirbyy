@@ -1,9 +1,8 @@
 import * as React from "react";
-import styles from "../../styles/components/aboutLanguagesHeader.module.css";
-import Link from "next/link";
+import styles from "../../../styles/components/headers/aboutLanguagesHeader.module.css"
+import NavigationSection from "@/app/components/navigationSection";
 
 const AboutLanguagesHeader: React.FC = () => {
-    const navOptions = ["tools", "db", "Python", "Java", "TypeScript", "C", "other"];
 
     return (
         <header className={styles.header}>
@@ -20,22 +19,7 @@ const AboutLanguagesHeader: React.FC = () => {
                         <span className={styles.darkerFont}>{Array(4).fill('\u00A0').join('')}"nav_options"</span>
                         <span className={styles.darkerFont}>:&nbsp;</span>
                         <span className={[styles.brackets, styles.darkerFont].join(" ")}>[</span>
-                        <Link className={styles.value} href={"/"}>
-                            <span className={styles.darkerFont}>"</span>
-                            <span>home</span>
-                            <span className={styles.darkerFont}>",&nbsp;</span>
-                        </Link>
-                        {navOptions.map((option, index) => (
-                            <React.Fragment key={index}>
-                                <div className={styles.darkerFont}>"</div>
-                                <a href={`#${option}`} className={styles.value}>
-                                    {option}
-                                </a>
-                                <div className={styles.darkerFont}>"</div>
-                                {index < navOptions.length - 1 &&
-                                    <span className={styles.darkerFont}>,&nbsp;</span>}
-                            </React.Fragment>
-                        ))}
+                        <NavigationSection options={["what", "when", "where", "how"]} />
                         <span className={[styles.brackets, styles.darkerFont].join(" ")}>]</span>
                     </div>
                 </div>

@@ -1,0 +1,15 @@
+.navOptions{
+    display: flex;
+}
+
+.value {
+    text-decoration: none;
+    color: var(--highlight-color-green);
+    cursor: pointer;
+}
+
+.darkerFont{
+    color: var(--text-color-shaded);
+}
+
+
