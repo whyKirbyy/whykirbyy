@@ -14,20 +14,22 @@ function StudiesPage() {
             <span className={styles.darkerFont}>{Array(4).fill('\u00A0').join('')}self.degree: str = degree</span>
             <span className={styles.darkerFont}>{Array(4).fill('\u00A0').join('')}self.major: str = major</span>
             <span className={styles.darkerFont}>{Array(4).fill('\u00A0').join('')}self.minor: str = minor</span>
+            <span className={styles.darkerFont}>{Array(4).fill('\u00A0').join('')}self.graduation_date: Optional[date] = graduation_date</span>
             <span className={styles.darkerFont}>{Array(4).fill('\u00A0').join('')}self.subjects: Dict[str; List[str]] = subjects</span>
             <span className={styles.darkerFont}>{Array(4).fill('\u00A0').join('')}self.overall_average: float = overall_average</span>
             <span className={styles.darkerFont}>{Array(4).fill('\u00A0').join('')}self.categorized_average: Dict[str; float] = categorized_average</span>
-            <span className={styles.darkerFont}>{Array(4).fill('\u00A0').join('')}self.transcript: str = transcript</span>
+            <span
+                className={styles.darkerFont}>{Array(4).fill('\u00A0').join('')}self.transcript: str = transcript</span>
             <span><br/></span>
         </div>
         <div className={styles.section}>
             <span className={styles.darkerFont}>studies: BackgroundItem = BackgroundItem(</span>
-            <div className={styles.line}>
+            <div className={styles.line} id={"where"}>
                 <span className={styles.darkerFont}>{Array(4).fill('\u00A0').join('')}university="</span>
                 <span>University of Zurich</span>
                 <span className={styles.darkerFont}>",</span>
             </div>
-            <div className={styles.line}>
+            <div className={styles.line} id={"what"}>
                 <span className={styles.darkerFont}>{Array(4).fill('\u00A0').join('')}degree="</span>
                 <span>Bachelor of Science</span>
                 <span className={styles.darkerFont}>",</span>
@@ -41,6 +43,11 @@ function StudiesPage() {
                 <span className={styles.darkerFont}>{Array(4).fill('\u00A0').join('')}minor="</span>
                 <span>Astrophysics</span>
                 <span className={styles.darkerFont}>",</span>
+            </div>
+            <div className={styles.line} id={"when"}>
+                <span className={styles.darkerFont}>{Array(4).fill('\u00A0').join('')}graduation_date=</span>
+                <span>None</span>
+                <span className={styles.darkerFont}>,</span>
             </div>
             <div className={styles.line}>
                 <span className={styles.darkerFont}>{Array(4).fill('\u00A0').join('')}subjects={"{"} major=["</span>
@@ -98,7 +105,7 @@ function StudiesPage() {
             <div className={styles.line}>
                 <span className={styles.darkerFont}>{Array(13).fill('\u00A0').join('')}{"}"},</span>
             </div>
-            <div className={styles.line}>
+            <div className={styles.line} id={"how"}>
                 <span className={styles.darkerFont}>{Array(4).fill('\u00A0').join('')}overall_average=</span>
                 <span>10</span>
             </div>

@@ -7,8 +7,9 @@ const AboutLanguagesHeader: React.FC = () => {
     return (
         <header className={styles.header}>
             <div className={styles.imports}>
-                <span className={styles.darkerFont}>from typing import Dict, List</span>
+                <span className={styles.darkerFont}>from typing import Dict, List, Optional</span>
                 <span className={styles.darkerFont}>from dataclasses import dataclass</span>
+                <span className={styles.darkerFont}>from datetime import date</span>
                 <span><br/></span>
             </div>
             <div className={styles.navList}>
