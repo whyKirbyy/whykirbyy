@@ -19,16 +19,6 @@ const menuButton: React.FC<menuButtonProps> = ({setShowSearch, isTerminalToggled
         });
     };
 
-    const copyPageUrl = () => {
-        navigator.clipboard.writeText(window.location.href)
-            .then(() => {
-                console.log("URL copied to clipboard");
-            })
-            .catch(err => {
-                console.error("Failed to copy URL: ", err);
-            });
-    };
-
     return (
         <div
             className={`${styles.buttonContainer} ${isTerminalToggled ? styles.terminalIsExpanded : ""} ${isTerminalHidden ? styles.terminalIsHidden : ""}`}

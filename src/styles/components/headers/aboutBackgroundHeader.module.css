@@ -1,10 +1,32 @@
-.page{
+.header{
     display: flex;
     flex-direction: column;
-    font-size: var(--font-size-default);
+    padding-top: 1vw;
+    margin-right: 5%;
     user-select: none;
     padding-left: 1.5vw;
-    padding-bottom: 3vw;
+}
+
+.navList {
+    white-space: nowrap;
+    font-size: var(--font-size-default);
+    display: flex;
+    flex-direction: column;
+}
+
+.navItems{
+    display: flex;
+}
+
+.navItem {
+    display: flex;
+    align-self: flex-start;
+
+    .value {
+        text-decoration: none;
+        color: var(--highlight-color-green);
+        cursor: pointer;
+    }
 }
 
 .comment{
@@ -22,18 +44,9 @@
     color: var(--text-color-shaded);
 }
 
-.section{
+.imports{
     font-size: var(--font-size-default);
     display: flex;
     flex-direction: column;
 }
 
-.line{
-    display: flex;
-}
-
-.linkExternal{
-    color: var(--highlight-color-blue);
-    text-decoration: none;
-    cursor: pointer;
-}
