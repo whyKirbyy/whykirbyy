@@ -36,12 +36,6 @@ const MainHeader: React.FC = () => {
                         <span className={[styles.brackets, styles.darkerFont].join(" ")}>]</span>
                         <span className={[styles.key, styles.darkerFont].join(" ")}>,&nbsp;</span>
                     </div>
-                    <div className={styles.navItem}>
-                        <span className={styles.darkerFont}>"options"</span>
-                        <span className={styles.darkerFont}>:&nbsp;"</span>
-                        <span className={styles.value}>options</span>
-                        <span className={styles.darkerFont}>",</span>
-                    </div>
                 </div>
                 <span className={styles.darkerFont}>{"}"}<br/><br/></span>
             </div>

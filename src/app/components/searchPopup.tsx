@@ -56,7 +56,7 @@ const SearchPopup: React.FC<TerminalPopupProps> = ({showTerminal}) => {
                 name="search"
                 id="search"
                 className={styles.searchbar}
-                placeholder="Search for a command"
+                placeholder="Search for a command or action"
                 ref={inputRef}
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
