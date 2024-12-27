@@ -7,39 +7,98 @@ import { useSearchParams, redirect } from "next/navigation";
 function whyKirbyy_website(){
     return(
         <div className={styles.page}>
-            Website
+            <span className={styles.darkerFont}>studies: Project = ProjectObject(</span>
+            <div className={styles.line} id={"where"}>
+                <span className={styles.darkerFont}>{Array(4).fill('\u00A0').join('')}description="""</span>
+                <span>Some text</span>
+                <span className={styles.darkerFont}>""",</span>
+            </div>
+            <div className={styles.line} id={"what"}>
+                <span className={styles.darkerFont}>{Array(4).fill('\u00A0').join('')}degree={"{"}"languages":&nbsp;"</span>
+                <span>Bachelor of Science</span>
+                <span className={styles.darkerFont}>"{"}"},</span>
+            </div>
+            <span className={styles.darkerFont}>)</span>
         </div>
     );
 }
 
-function whyKirbyy_package(){
-    return(
+function whyKirbyy_package() {
+    return (
         <div className={styles.page}>
-            Package
+            <span className={styles.darkerFont}>studies: Project = ProjectObject(</span>
+            <div className={styles.line} id={"where"}>
+                <span className={styles.darkerFont}>{Array(4).fill('\u00A0').join('')}description="""</span>
+                <span>Some text</span>
+                <span className={styles.darkerFont}>""",</span>
+            </div>
+            <div className={styles.line} id={"what"}>
+                <span
+                    className={styles.darkerFont}>{Array(4).fill('\u00A0').join('')}degree={"{"}"languages":&nbsp;"</span>
+                <span>Bachelor of Science</span>
+                <span className={styles.darkerFont}>"{"}"},</span>
+            </div>
+            <span className={styles.darkerFont}>)</span>
         </div>
     );
 }
 
-function nudelsoup(){
-    return(
+function nudelsoup() {
+    return (
         <div className={styles.page}>
-            nudelsoup
+            <span className={styles.darkerFont}>studies: Project = ProjectObject(</span>
+            <div className={styles.line} id={"where"}>
+                <span className={styles.darkerFont}>{Array(4).fill('\u00A0').join('')}description="""</span>
+                <span>Some text</span>
+                <span className={styles.darkerFont}>""",</span>
+            </div>
+            <div className={styles.line} id={"what"}>
+                <span
+                    className={styles.darkerFont}>{Array(4).fill('\u00A0').join('')}degree={"{"}"languages":&nbsp;"</span>
+                <span>Bachelor of Science</span>
+                <span className={styles.darkerFont}>"{"}"},</span>
+            </div>
+            <span className={styles.darkerFont}>)</span>
         </div>
     );
 }
 
-function sundtrack(){
-    return(
+function sundtrack() {
+    return (
         <div className={styles.page}>
-            sundtrack
+            <span className={styles.darkerFont}>studies: Project = ProjectObject(</span>
+            <div className={styles.line} id={"where"}>
+                <span className={styles.darkerFont}>{Array(4).fill('\u00A0').join('')}description="""</span>
+                <span>Some text</span>
+                <span className={styles.darkerFont}>""",</span>
+            </div>
+            <div className={styles.line} id={"what"}>
+                <span
+                    className={styles.darkerFont}>{Array(4).fill('\u00A0').join('')}degree={"{"}"languages":&nbsp;"</span>
+                <span>Bachelor of Science</span>
+                <span className={styles.darkerFont}>"{"}"},</span>
+            </div>
+            <span className={styles.darkerFont}>)</span>
         </div>
     );
 }
 
 function lgl() {
-    return(
+    return (
         <div className={styles.page}>
-            lgl
+            <span className={styles.darkerFont}>studies: Project = ProjectObject(</span>
+            <div className={styles.line} id={"where"}>
+                <span className={styles.darkerFont}>{Array(4).fill('\u00A0').join('')}description="""</span>
+                <span>Some text</span>
+                <span className={styles.darkerFont}>""",</span>
+            </div>
+            <div className={styles.line} id={"what"}>
+                <span
+                    className={styles.darkerFont}>{Array(4).fill('\u00A0').join('')}degree={"{"}"languages":&nbsp;"</span>
+                <span>Bachelor of Science</span>
+                <span className={styles.darkerFont}>"{"}"},</span>
+            </div>
+            <span className={styles.darkerFont}>)</span>
         </div>
     );
 }

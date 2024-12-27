@@ -7,7 +7,7 @@ const AboutLanguagesHeader: React.FC = () => {
     return (
         <header className={styles.header}>
             <div className={styles.imports}>
-                <span className={styles.darkerFont}>from typing import Dict, List</span>
+                <span className={styles.darkerFont}>from typing import Dict, List, Union</span>
                 <span className={styles.darkerFont}>from dataclasses import dataclass</span>
                 <span><br/></span>
             </div>
@@ -34,8 +34,11 @@ const AboutLanguagesHeader: React.FC = () => {
             <div className={styles.imports}>
                 <span className={styles.darkerFont}>@dataclass</span>
                 <span className={styles.darkerFont}>class Project:</span>
+                <span className={styles.darkerFont}>{Array(4).fill('\u00A0').join('')}self.name: str = name</span>
                 <span className={styles.darkerFont}>{Array(4).fill('\u00A0').join('')}self.description: str = description</span>
-                <span className={styles.darkerFont}>{Array(4).fill('\u00A0').join('')}self.technologies: Dict[str, str] = technologies</span>
+                <span className={styles.darkerFont}>{Array(4).fill('\u00A0').join('')}self.technologies: Dict[str, Union[str, List[str]]] = technologies</span>
+                <span className={styles.darkerFont}>{Array(4).fill('\u00A0').join('')}self.urls: List[str] = urls</span>
+
                 <span><br/><br/></span>
             </div>
         </header>
