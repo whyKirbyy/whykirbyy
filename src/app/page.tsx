@@ -178,7 +178,7 @@ export default function Home() {
                         <div
                             className={`${styles.darkerFont} ${styles.decorators}`}>{Array(8).fill('\u00A0').join('')}name="
                         </div>
-                        <div className={styles.text}><Link className={styles.linkInternal} href="/about-project?project=whyKirbyy-website">whyKirbyy website</Link>
+                        <div className={styles.text}><Link className={styles.linkInternal} href="/about-project?project=website">whyKirbyy website</Link>
                         </div>
                         <div className={`${styles.darkerFont} ${styles.decorators}`}>",<br/></div>
                     </div>
@@ -237,7 +237,7 @@ export default function Home() {
                         <div
                             className={`${styles.darkerFont} ${styles.decorators}`}>{Array(8).fill('\u00A0').join('')}name="
                         </div>
-                        <div className={styles.text}><Link className={styles.linkInternal} href="/about-project?project=whyKirbyy-package">whyKirbyy package</Link>
+                        <div className={styles.text}><Link className={styles.linkInternal} href="/about-project?project=package">whyKirbyy package</Link>
                         </div>
                         <div className={`${styles.darkerFont} ${styles.decorators}`}>",<br/></div>
                     </div>
