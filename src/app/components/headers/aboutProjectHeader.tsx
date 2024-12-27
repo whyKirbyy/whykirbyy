@@ -1,5 +1,5 @@
 import * as React from "react";
-import styles from "../../../styles/components/headers/aboutLanguagesHeader.module.css"
+import styles from "../../../styles/components/headers/aboutBackgroundHeader.module.css"
 import NavigationSection from "@/app/components/navigationSection";
 
 const AboutLanguagesHeader: React.FC = () => {
@@ -7,7 +7,7 @@ const AboutLanguagesHeader: React.FC = () => {
     return (
         <header className={styles.header}>
             <div className={styles.imports}>
-                <span className={styles.darkerFont}>from typing import Dict, List</span>
+                <span className={styles.darkerFont}>from typing import Dict, List, Union</span>
                 <span className={styles.darkerFont}>from dataclasses import dataclass</span>
                 <span><br/></span>
             </div>
@@ -19,11 +19,27 @@ const AboutLanguagesHeader: React.FC = () => {
                         <span className={styles.darkerFont}>{Array(4).fill('\u00A0').join('')}"nav_options"</span>
                         <span className={styles.darkerFont}>:&nbsp;</span>
                         <span className={[styles.brackets, styles.darkerFont].join(" ")}>[</span>
-                        <NavigationSection options={["what", "how", "why"]} />
+                        <NavigationSection options={["description", "technologies"]}/>
                         <span className={[styles.brackets, styles.darkerFont].join(" ")}>]</span>
                     </div>
                 </div>
                 <span className={styles.darkerFont}>{"}"}<br/><br/></span>
+            </div>
+            <div className={styles.comment}>
+                <span
+                    className={styles.imports}># this is a page containing more detail about the project you selected</span>
+                <span className={styles.imports}># to go back click on "home"</span>
+                <span><br/><br/></span>
+            </div>
+            <div className={styles.imports}>
+                <span className={styles.darkerFont}>@dataclass</span>
+                <span className={styles.darkerFont}>class Project:</span>
+                <span className={styles.darkerFont}>{Array(4).fill('\u00A0').join('')}self.name: str = name</span>
+                <span className={styles.darkerFont}>{Array(4).fill('\u00A0').join('')}self.description: str = description</span>
+                <span className={styles.darkerFont}>{Array(4).fill('\u00A0').join('')}self.technologies: Dict[str, Union[str, List[str]]] = technologies</span>
+                <span className={styles.darkerFont}>{Array(4).fill('\u00A0').join('')}self.urls: List[str] = urls</span>
+
+                <span><br/><br/></span>
             </div>
         </header>
     );
