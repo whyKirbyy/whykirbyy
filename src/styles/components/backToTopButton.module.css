@@ -1,6 +1,6 @@
 .buttonContainer {
     position: fixed;
-    bottom: 5vw;
+    bottom: 1vw;
     right: 1vw;
     z-index: 50;
 }

@@ -5,7 +5,6 @@ import Link from "next/link";
 import styles from "./page.module.css";
 import BackToTopButton from "@/app/components/backToTopButton";
 import SearchPopup from "@/app/components/searchPopup";
-import Terminal from "@/app/components/terminal";
 
 export default function Home() {
     const [showSearch, setShowSearch] = useState(false)
@@ -705,9 +704,6 @@ export default function Home() {
                     <BackToTopButton setShowSearch={notShowSearch} setShowTerminal={hideTerminal} isTerminalToggled={isExpanded} isTerminalHidden={!showTerminal}/>
                 </div>
             </div>
-            {showTerminal && (
-                <Terminal setIsExpanded={expandTerminal} isToggled={isExpanded} setIsToggled={expandTerminal} setIsHidden={hideTerminal} />
-            )}
         </div>
     );
 }
