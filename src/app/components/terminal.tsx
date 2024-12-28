@@ -7,7 +7,7 @@ interface TerminalProps{
     setIsToggled: () => void
     isToggled: boolean
 }
-
+{/*test*/}
 const Terminal: React.FC<TerminalProps> = ({ setIsHidden, isToggled, setIsToggled}) => {
     return(
         <div className={`${styles.terminal} ${isToggled ? styles.terminalExpanded : ""}`} onClick={() => {if (!isToggled) {setIsToggled();}
