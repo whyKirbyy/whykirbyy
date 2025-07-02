@@ -1,1 +1,1 @@
-Hi there, I'm Tim, a CS / Astrophysics student @ UZH
+Hi there, I'm whyKirbyy, a CS & Astrophysics student
